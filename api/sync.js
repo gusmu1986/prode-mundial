@@ -18,7 +18,7 @@ module.exports = async function handler(req, res) {
         max_tokens: 8000,
         messages: [{
           role: 'user',
-          content: 'Devolveme el fixture completo del Mundial 2026 — todos los 48 partidos de fase de grupos. SOLO JSON, sin markdown, sin texto extra. Formato exacto: {"matches":[{"id":"g001","team1":"Mexico","team2":"South Africa","date":"2026-06-11","kickoff_utc":"2026-06-11T19:00:00Z","group":"A","stage":"group"}]}'
+          content: 'Devolveme el fixture completo del Mundial 2026 — todos los 48 partidos de fase de grupos. SOLO JSON puro, sin markdown, sin bloques de codigo, sin texto antes ni despues. Empeza directamente con { y termina con }. Formato: {"matches":[{"id":"g001","team1":"Mexico","team2":"South Africa","date":"2026-06-11","kickoff_utc":"2026-06-11T19:00:00Z","group":"A","stage":"group"}]}'
         }]
       })
     });
@@ -30,8 +30,15 @@ module.exports = async function handler(req, res) {
     }
 
     const text = data.content?.[0]?.text || '';
-    const clean = text.replace(/```json|```/g, '').trim();
-    const parsed = JSON.parse(clean);
+    // Extract JSON robustly - find first { and last }
+    const firstBrace = text.indexOf('{');
+    const lastBrace = text.lastIndexOf('}');
+    if (firstBrace === -1 || lastBrace === -1) {
+      console.error('No JSON found in response:', text.substring(0, 200));
+      return res.status(500).json({ error: 'No JSON in response', preview: text.substring(0, 200) });
+    }
+    const jsonStr = text.substring(firstBrace, lastBrace + 1);
+    const parsed = JSON.parse(jsonStr);
     return res.status(200).json(parsed);
   } catch (e) {
     console.error('Handler error:', e.message);
