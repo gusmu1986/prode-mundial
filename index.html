@@ -571,43 +571,38 @@ var getTeam = function getTeam(id) {
 // ── OFB FETCH ────────────────────────────────────────────────
 var fetchOFB = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(onProgress) {
-    var _data$content, resp, data, text, clean, _t;
+    var resp, _t;
     return _regenerator().w(function (_context2) {
       while (1) switch (_context2.p = _context2.n) {
         case 0:
           _context2.p = 0;
           if (onProgress) onProgress('Consultando a Claude el fixture del Mundial 2026...');
           _context2.n = 1;
-          return fetch('https://api.anthropic.com/v1/messages', {
+          return fetch('/api/sync', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              model: 'claude-sonnet-4-20250514',
-              max_tokens: 8000,
-              messages: [{
-                role: 'user',
-                content: "Devolveme el fixture completo del Mundial 2026 (todos los partidos de fase de grupos) en formato JSON.\nUs\xE1 exactamente este formato, sin texto adicional, solo el JSON:\n{\n  \"matches\": [\n    {\"team1\": \"Mexico\", \"team2\": \"South Africa\", \"date\": \"2026-06-11\", \"time\": \"19:00 UTC+0\", \"group\": \"A\"},\n    ...\n  ]\n}\nInclu\xED los 48 partidos de la fase de grupos con fechas y horarios reales en UTC.\nSolo respond\xE9 con el JSON, sin markdown, sin explicaciones."
-              }]
-            })
+            }
           });
         case 1:
           resp = _context2.v;
-          _context2.n = 2;
-          return resp.json();
+          if (resp.ok) {
+            _context2.n = 2;
+            break;
+          }
+          throw new Error('API error: ' + resp.status);
         case 2:
-          data = _context2.v;
-          text = ((_data$content = data.content) === null || _data$content === void 0 || (_data$content = _data$content[0]) === null || _data$content === void 0 ? void 0 : _data$content.text) || '';
-          clean = text.replace(/\`\`\`json|\`\`\`/g, '').trim();
-          return _context2.a(2, JSON.parse(clean));
+          _context2.n = 3;
+          return resp.json();
         case 3:
-          _context2.p = 3;
+          return _context2.a(2, _context2.v);
+        case 4:
+          _context2.p = 4;
           _t = _context2.v;
-          console.error('Claude fetch error:', _t);
+          console.error('Sync error:', _t);
           return _context2.a(2, null);
       }
-    }, _callee2, null, [[0, 3]]);
+    }, _callee2, null, [[0, 4]]);
   }));
   return function fetchOFB(_x2) {
     return _ref4.apply(this, arguments);
