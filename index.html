@@ -574,6 +574,8 @@ var PROXIES = [function (u) {
   return "https://api.allorigins.win/raw?url=".concat(encodeURIComponent(u));
 }, function (u) {
   return "https://corsproxy.io/?".concat(encodeURIComponent(u));
+}, function (u) {
+  return "https://api.codetabs.com/v1/proxy?quest=".concat(encodeURIComponent(u));
 }];
 var fetchOFB = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
@@ -602,9 +604,9 @@ var fetchOFB = /*#__PURE__*/function () {
           return _context2.a(3, 7);
         case 4:
           _context2.n = 5;
-          return r.json();
+          return r.text();
         case 5:
-          return _context2.a(2, _context2.v);
+          var _txt=_context2.v; if(!_txt||_txt.length<10){return _context2.a(3,7);} try{return _context2.a(2,JSON.parse(_txt));}catch{return _context2.a(3,7);}
         case 6:
           _context2.p = 6;
           _t = _context2.v;
