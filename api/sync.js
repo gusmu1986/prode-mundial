@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -18,33 +18,23 @@ export default async function handler(req, res) {
         max_tokens: 8000,
         messages: [{
           role: 'user',
-          content: `Devolveme el fixture completo del Mundial 2026 — todos los partidos de fase de grupos (48 partidos) y eliminatorias hasta la final (56 partidos en total, 104 en total).
-
-Respondé SOLO con un JSON válido, sin markdown, sin texto extra. Formato exacto:
-{
-  "matches": [
-    {"id": "g001", "team1": "Mexico", "team2": "South Africa", "date": "2026-06-11", "kickoff_utc": "2026-06-11T19:00:00Z", "group": "A", "stage": "group"},
-    ...
-  ]
-}
-
-Para fase de grupos: incluí group (A-L) y stage="group".
-Para eliminatorias: group=null y stage con el nombre de la ronda (ej: "Round of 32", "Round of 16", "Quarter-final", "Semi-final", "Third place", "Final").
-Para eliminatorias donde no se conocen los equipos aún, usá "TBD" como team1 y team2.
-Todos los kickoff_utc en formato ISO 8601 UTC.
-Solo el JSON, nada más.`
+          content: 'Devolveme el fixture completo del Mundial 2026 — todos los 48 partidos de fase de grupos. SOLO JSON, sin markdown, sin texto extra. Formato: {"matches":[{"id":"g001","team1":"Mexico","team2":"South Africa","date":"2026-06-11","kickoff_utc":"2026-06-11T19:00:00Z","group":"A","stage":"group"}]}'
         }]
       })
     });
 
     const data = await response.json();
-    if (!response.ok) return res.status(500).json({ error: data });
+    if (!response.ok) {
+      console.error('Anthropic error:', JSON.stringify(data));
+      return res.status(500).json({ error: 'Anthropic API error', detail: data });
+    }
 
     const text = data.content?.[0]?.text || '';
     const clean = text.replace(/```json|```/g, '').trim();
     const parsed = JSON.parse(clean);
     return res.status(200).json(parsed);
   } catch (e) {
+    console.error('Handler error:', e.message);
     return res.status(500).json({ error: e.message });
   }
 }
