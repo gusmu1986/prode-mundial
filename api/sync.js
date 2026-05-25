@@ -14,11 +14,11 @@ module.exports = async function handler(req, res) {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-opus-4-5',
         max_tokens: 8000,
         messages: [{
           role: 'user',
-          content: 'Devolveme el fixture completo del Mundial 2026 — todos los 48 partidos de fase de grupos. SOLO JSON, sin markdown, sin texto extra. Formato: {"matches":[{"id":"g001","team1":"Mexico","team2":"South Africa","date":"2026-06-11","kickoff_utc":"2026-06-11T19:00:00Z","group":"A","stage":"group"}]}'
+          content: 'Devolveme el fixture completo del Mundial 2026 — todos los 48 partidos de fase de grupos. SOLO JSON, sin markdown, sin texto extra. Formato exacto: {"matches":[{"id":"g001","team1":"Mexico","team2":"South Africa","date":"2026-06-11","kickoff_utc":"2026-06-11T19:00:00Z","group":"A","stage":"group"}]}'
         }]
       })
     });
