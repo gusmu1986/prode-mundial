@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prode Mundial 2026</title>
-<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--gd:#0a1f0e;--gm:#1a3d20;--gf:#2d6a35;--gb:#4caf50;--gold:#f0b429;--gl:#ffd166;--w:#f8f9f0;--gr:#8a9b8e;--red:#e84040}
@@ -141,494 +140,1873 @@ body{background:var(--gd);color:var(--w);font-family:'DM Sans',sans-serif;min-he
 </head>
 <body>
 <div id="root"><div style="display:flex;align-items:center;justify-content:center;height:100vh;color:#4caf50;font-size:18px;font-family:sans-serif">Cargando...</div></div>
-<script type="text/babel">
-const {useState,useEffect,useCallback} = React;
+
+<script>
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i.return) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var _React = React,
+  useState = _React.useState,
+  useEffect = _React.useEffect,
+  useCallback = _React.useCallback;
 
 // ── CONFIG ──────────────────────────────────────────────────
-const DEFAULT_CFG = {
+var DEFAULT_CFG = {
   supabaseUrl: 'https://soxtrabhqhoyntjyhjfc.supabase.co',
   supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNveHRyYWJocWhveW50anloamZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NzA1MDUsImV4cCI6MjA5NTI0NjUwNX0.NUsRaeDe6y0ihiaTW-mkL7CL9-Zt9QQUHP8wdKfdPeY',
-  adminEmail: '',
+  adminEmail: ''
 };
-const getConfig = () => { try { return {...DEFAULT_CFG,...JSON.parse(localStorage.getItem('prode_cfg')||'{}')}; } catch { return DEFAULT_CFG; } };
-const saveConfig = c => localStorage.setItem('prode_cfg', JSON.stringify(c));
-const getSession = () => { try { return JSON.parse(localStorage.getItem('prode_ses')); } catch { return null; } };
-const saveSession = s => localStorage.setItem('prode_ses', JSON.stringify(s));
-const clearSession = () => localStorage.removeItem('prode_ses');
+var getConfig = function getConfig() {
+  try {
+    return _objectSpread(_objectSpread({}, DEFAULT_CFG), JSON.parse(localStorage.getItem('prode_cfg') || '{}'));
+  } catch (_unused) {
+    return DEFAULT_CFG;
+  }
+};
+var saveConfig = function saveConfig(c) {
+  return localStorage.setItem('prode_cfg', JSON.stringify(c));
+};
+var getSession = function getSession() {
+  try {
+    return JSON.parse(localStorage.getItem('prode_ses'));
+  } catch (_unused2) {
+    return null;
+  }
+};
+var saveSession = function saveSession(s) {
+  return localStorage.setItem('prode_ses', JSON.stringify(s));
+};
+var clearSession = function clearSession() {
+  return localStorage.removeItem('prode_ses');
+};
 
 // ── SUPABASE ─────────────────────────────────────────────────
-const mkSupa = (url, key, tok) => {
-  const h = (x={}) => ({'apikey':key,'Authorization':`Bearer ${tok||key}`,'Content-Type':'application/json',...x});
-  const get = (t,q='') => fetch(`${url}/rest/v1/${t}?${q}`,{headers:h()}).then(r=>r.json());
-  const post = (t,b,pref='return=representation,resolution=merge-duplicates') =>
-    fetch(`${url}/rest/v1/${t}`,{method:'POST',headers:h({'Prefer':pref}),body:JSON.stringify(b)}).then(r=>r.json());
-  const patch = (t,m,b) => {
-    const q=Object.entries(m).map(([k,v])=>`${k}=eq.${encodeURIComponent(v)}`).join('&');
-    return fetch(`${url}/rest/v1/${t}?${q}`,{method:'PATCH',headers:h({'Prefer':'return=minimal'}),body:JSON.stringify(b)});
+var mkSupa = function mkSupa(url, key, tok) {
+  var h = function h() {
+    var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    return _objectSpread({
+      'apikey': key,
+      'Authorization': "Bearer ".concat(tok || key),
+      'Content-Type': 'application/json'
+    }, x);
   };
-  const auth = (p,b) => fetch(`${url}/auth/v1/${p}`,{method:'POST',headers:{'apikey':key,'Content-Type':'application/json'},body:JSON.stringify(b)})
-    .then(async r=>{const d=await r.json();if(!r.ok)throw d;return d;});
-  return {get,post,patch,signUp:(e,p)=>auth('signup',{email:e,password:p}),signIn:(e,p)=>auth('token?grant_type=password',{email:e,password:p})};
+  var get = function get(t) {
+    var q = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    return fetch("".concat(url, "/rest/v1/").concat(t, "?").concat(q), {
+      headers: h()
+    }).then(function (r) {
+      return r.json();
+    });
+  };
+  var post = function post(t, b) {
+    var pref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'return=representation,resolution=merge-duplicates';
+    return fetch("".concat(url, "/rest/v1/").concat(t), {
+      method: 'POST',
+      headers: h({
+        'Prefer': pref
+      }),
+      body: JSON.stringify(b)
+    }).then(function (r) {
+      return r.json();
+    });
+  };
+  var patch = function patch(t, m, b) {
+    var q = Object.entries(m).map(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+        k = _ref2[0],
+        v = _ref2[1];
+      return "".concat(k, "=eq.").concat(encodeURIComponent(v));
+    }).join('&');
+    return fetch("".concat(url, "/rest/v1/").concat(t, "?").concat(q), {
+      method: 'PATCH',
+      headers: h({
+        'Prefer': 'return=minimal'
+      }),
+      body: JSON.stringify(b)
+    });
+  };
+  var auth = function auth(p, b) {
+    return fetch("".concat(url, "/auth/v1/").concat(p), {
+      method: 'POST',
+      headers: {
+        'apikey': key,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(b)
+    }).then(/*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(r) {
+        var d;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.n) {
+            case 0:
+              _context.n = 1;
+              return r.json();
+            case 1:
+              d = _context.v;
+              if (r.ok) {
+                _context.n = 2;
+                break;
+              }
+              throw d;
+            case 2:
+              return _context.a(2, d);
+          }
+        }, _callee);
+      }));
+      return function (_x) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+  };
+  return {
+    get: get,
+    post: post,
+    patch: patch,
+    signUp: function signUp(e, p) {
+      return auth('signup', {
+        email: e,
+        password: p
+      });
+    },
+    signIn: function signIn(e, p) {
+      return auth('token?grant_type=password', {
+        email: e,
+        password: p
+      });
+    }
+  };
 };
 
 // ── TEAMS ────────────────────────────────────────────────────
-const GROUPS = {
-  'Grupo A':[{id:'MEX',n:'México',f:'🇲🇽'},{id:'RSA',n:'Sudáfrica',f:'🇿🇦'},{id:'KOR',n:'Corea del Sur',f:'🇰🇷'},{id:'CZE',n:'Rep. Checa',f:'🇨🇿'}],
-  'Grupo B':[{id:'CAN',n:'Canadá',f:'🇨🇦'},{id:'BIH',n:'Bosnia-Herz.',f:'🇧🇦'},{id:'QAT',n:'Catar',f:'🇶🇦'},{id:'SUI',n:'Suiza',f:'🇨🇭'}],
-  'Grupo C':[{id:'BRA',n:'Brasil',f:'🇧🇷'},{id:'MAR',n:'Marruecos',f:'🇲🇦'},{id:'HAI',n:'Haití',f:'🇭🇹'},{id:'SCO',n:'Escocia',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'}],
-  'Grupo D':[{id:'USA',n:'Estados Unidos',f:'🇺🇸'},{id:'PAR',n:'Paraguay',f:'🇵🇾'},{id:'AUS',n:'Australia',f:'🇦🇺'},{id:'TUR',n:'Turquía',f:'🇹🇷'}],
-  'Grupo E':[{id:'GER',n:'Alemania',f:'🇩🇪'},{id:'CUW',n:'Curazao',f:'🇨🇼'},{id:'CIV',n:'Costa de Marfil',f:'🇨🇮'},{id:'ECU',n:'Ecuador',f:'🇪🇨'}],
-  'Grupo F':[{id:'NED',n:'Países Bajos',f:'🇳🇱'},{id:'JPN',n:'Japón',f:'🇯🇵'},{id:'SWE',n:'Suecia',f:'🇸🇪'},{id:'TUN',n:'Túnez',f:'🇹🇳'}],
-  'Grupo G':[{id:'BEL',n:'Bélgica',f:'🇧🇪'},{id:'EGY',n:'Egipto',f:'🇪🇬'},{id:'IRN',n:'Irán',f:'🇮🇷'},{id:'NZL',n:'Nueva Zelanda',f:'🇳🇿'}],
-  'Grupo H':[{id:'ESP',n:'España',f:'🇪🇸'},{id:'CPV',n:'Cabo Verde',f:'🇨🇻'},{id:'SAU',n:'Arabia Saudita',f:'🇸🇦'},{id:'URU',n:'Uruguay',f:'🇺🇾'}],
-  'Grupo I':[{id:'FRA',n:'Francia',f:'🇫🇷'},{id:'SEN',n:'Senegal',f:'🇸🇳'},{id:'IRQ',n:'Irak',f:'🇮🇶'},{id:'NOR',n:'Noruega',f:'🇳🇴'}],
-  'Grupo J':[{id:'ARG',n:'Argentina',f:'🇦🇷'},{id:'ALG',n:'Argelia',f:'🇩🇿'},{id:'AUT',n:'Austria',f:'🇦🇹'},{id:'JOR',n:'Jordania',f:'🇯🇴'}],
-  'Grupo K':[{id:'POR',n:'Portugal',f:'🇵🇹'},{id:'COD',n:'R.D. Congo',f:'🇨🇩'},{id:'UZB',n:'Uzbekistán',f:'🇺🇿'},{id:'COL',n:'Colombia',f:'🇨🇴'}],
-  'Grupo L':[{id:'ENG',n:'Inglaterra',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},{id:'CRO',n:'Croacia',f:'🇭🇷'},{id:'GHA',n:'Ghana',f:'🇬🇭'},{id:'PAN',n:'Panamá',f:'🇵🇦'}],
+var GROUPS = {
+  'Grupo A': [{
+    id: 'MEX',
+    n: 'México',
+    f: '🇲🇽'
+  }, {
+    id: 'RSA',
+    n: 'Sudáfrica',
+    f: '🇿🇦'
+  }, {
+    id: 'KOR',
+    n: 'Corea del Sur',
+    f: '🇰🇷'
+  }, {
+    id: 'CZE',
+    n: 'Rep. Checa',
+    f: '🇨🇿'
+  }],
+  'Grupo B': [{
+    id: 'CAN',
+    n: 'Canadá',
+    f: '🇨🇦'
+  }, {
+    id: 'BIH',
+    n: 'Bosnia-Herz.',
+    f: '🇧🇦'
+  }, {
+    id: 'QAT',
+    n: 'Catar',
+    f: '🇶🇦'
+  }, {
+    id: 'SUI',
+    n: 'Suiza',
+    f: '🇨🇭'
+  }],
+  'Grupo C': [{
+    id: 'BRA',
+    n: 'Brasil',
+    f: '🇧🇷'
+  }, {
+    id: 'MAR',
+    n: 'Marruecos',
+    f: '🇲🇦'
+  }, {
+    id: 'HAI',
+    n: 'Haití',
+    f: '🇭🇹'
+  }, {
+    id: 'SCO',
+    n: 'Escocia',
+    f: '🏴󠁧󠁢󠁳󠁣󠁴󠁿'
+  }],
+  'Grupo D': [{
+    id: 'USA',
+    n: 'Estados Unidos',
+    f: '🇺🇸'
+  }, {
+    id: 'PAR',
+    n: 'Paraguay',
+    f: '🇵🇾'
+  }, {
+    id: 'AUS',
+    n: 'Australia',
+    f: '🇦🇺'
+  }, {
+    id: 'TUR',
+    n: 'Turquía',
+    f: '🇹🇷'
+  }],
+  'Grupo E': [{
+    id: 'GER',
+    n: 'Alemania',
+    f: '🇩🇪'
+  }, {
+    id: 'CUW',
+    n: 'Curazao',
+    f: '🇨🇼'
+  }, {
+    id: 'CIV',
+    n: 'Costa de Marfil',
+    f: '🇨🇮'
+  }, {
+    id: 'ECU',
+    n: 'Ecuador',
+    f: '🇪🇨'
+  }],
+  'Grupo F': [{
+    id: 'NED',
+    n: 'Países Bajos',
+    f: '🇳🇱'
+  }, {
+    id: 'JPN',
+    n: 'Japón',
+    f: '🇯🇵'
+  }, {
+    id: 'SWE',
+    n: 'Suecia',
+    f: '🇸🇪'
+  }, {
+    id: 'TUN',
+    n: 'Túnez',
+    f: '🇹🇳'
+  }],
+  'Grupo G': [{
+    id: 'BEL',
+    n: 'Bélgica',
+    f: '🇧🇪'
+  }, {
+    id: 'EGY',
+    n: 'Egipto',
+    f: '🇪🇬'
+  }, {
+    id: 'IRN',
+    n: 'Irán',
+    f: '🇮🇷'
+  }, {
+    id: 'NZL',
+    n: 'Nueva Zelanda',
+    f: '🇳🇿'
+  }],
+  'Grupo H': [{
+    id: 'ESP',
+    n: 'España',
+    f: '🇪🇸'
+  }, {
+    id: 'CPV',
+    n: 'Cabo Verde',
+    f: '🇨🇻'
+  }, {
+    id: 'SAU',
+    n: 'Arabia Saudita',
+    f: '🇸🇦'
+  }, {
+    id: 'URU',
+    n: 'Uruguay',
+    f: '🇺🇾'
+  }],
+  'Grupo I': [{
+    id: 'FRA',
+    n: 'Francia',
+    f: '🇫🇷'
+  }, {
+    id: 'SEN',
+    n: 'Senegal',
+    f: '🇸🇳'
+  }, {
+    id: 'IRQ',
+    n: 'Irak',
+    f: '🇮🇶'
+  }, {
+    id: 'NOR',
+    n: 'Noruega',
+    f: '🇳🇴'
+  }],
+  'Grupo J': [{
+    id: 'ARG',
+    n: 'Argentina',
+    f: '🇦🇷'
+  }, {
+    id: 'ALG',
+    n: 'Argelia',
+    f: '🇩🇿'
+  }, {
+    id: 'AUT',
+    n: 'Austria',
+    f: '🇦🇹'
+  }, {
+    id: 'JOR',
+    n: 'Jordania',
+    f: '🇯🇴'
+  }],
+  'Grupo K': [{
+    id: 'POR',
+    n: 'Portugal',
+    f: '🇵🇹'
+  }, {
+    id: 'COD',
+    n: 'R.D. Congo',
+    f: '🇨🇩'
+  }, {
+    id: 'UZB',
+    n: 'Uzbekistán',
+    f: '🇺🇿'
+  }, {
+    id: 'COL',
+    n: 'Colombia',
+    f: '🇨🇴'
+  }],
+  'Grupo L': [{
+    id: 'ENG',
+    n: 'Inglaterra',
+    f: '🏴󠁧󠁢󠁥󠁮󠁧󠁿'
+  }, {
+    id: 'CRO',
+    n: 'Croacia',
+    f: '🇭🇷'
+  }, {
+    id: 'GHA',
+    n: 'Ghana',
+    f: '🇬🇭'
+  }, {
+    id: 'PAN',
+    n: 'Panamá',
+    f: '🇵🇦'
+  }]
 };
-const ALL_T = Object.values(GROUPS).flat();
-const TM = {};
-ALL_T.forEach(t=>{TM[t.id]=t;});
-const OFB = {'Mexico':'MEX','South Africa':'RSA','South Korea':'KOR','Czech Republic':'CZE','Canada':'CAN','Bosnia & Herzegovina':'BIH','Bosnia-Herzegovina':'BIH','Qatar':'QAT','Switzerland':'SUI','Brazil':'BRA','Morocco':'MAR','Haiti':'HAI','Scotland':'SCO','USA':'USA','Paraguay':'PAR','Australia':'AUS','Turkey':'TUR','Germany':'GER','Curaçao':'CUW','Ivory Coast':'CIV','Ecuador':'ECU','Netherlands':'NED','Japan':'JPN','Sweden':'SWE','Tunisia':'TUN','Belgium':'BEL','Egypt':'EGY','Iran':'IRN','New Zealand':'NZL','Spain':'ESP','Cape Verde':'CPV','Saudi Arabia':'SAU','Uruguay':'URU','France':'FRA','Senegal':'SEN','Iraq':'IRQ','Norway':'NOR','Argentina':'ARG','Algeria':'ALG','Austria':'AUT','Jordan':'JOR','Portugal':'POR','DR Congo':'COD','Uzbekistan':'UZB','Colombia':'COL','England':'ENG','Croatia':'CRO','Ghana':'GHA','Panama':'PAN'};
-const getTeam = id => { if(!id) return {n:'?',f:'🏳️'}; return TM[OFB[id]||id]||TM[id]||{n:id,f:'🏳️'}; };
+var ALL_T = Object.values(GROUPS).flat();
+var TM = {};
+ALL_T.forEach(function (t) {
+  TM[t.id] = t;
+});
+var OFB = {
+  'Mexico': 'MEX',
+  'South Africa': 'RSA',
+  'South Korea': 'KOR',
+  'Czech Republic': 'CZE',
+  'Canada': 'CAN',
+  'Bosnia & Herzegovina': 'BIH',
+  'Bosnia-Herzegovina': 'BIH',
+  'Qatar': 'QAT',
+  'Switzerland': 'SUI',
+  'Brazil': 'BRA',
+  'Morocco': 'MAR',
+  'Haiti': 'HAI',
+  'Scotland': 'SCO',
+  'USA': 'USA',
+  'Paraguay': 'PAR',
+  'Australia': 'AUS',
+  'Turkey': 'TUR',
+  'Germany': 'GER',
+  'Curaçao': 'CUW',
+  'Ivory Coast': 'CIV',
+  'Ecuador': 'ECU',
+  'Netherlands': 'NED',
+  'Japan': 'JPN',
+  'Sweden': 'SWE',
+  'Tunisia': 'TUN',
+  'Belgium': 'BEL',
+  'Egypt': 'EGY',
+  'Iran': 'IRN',
+  'New Zealand': 'NZL',
+  'Spain': 'ESP',
+  'Cape Verde': 'CPV',
+  'Saudi Arabia': 'SAU',
+  'Uruguay': 'URU',
+  'France': 'FRA',
+  'Senegal': 'SEN',
+  'Iraq': 'IRQ',
+  'Norway': 'NOR',
+  'Argentina': 'ARG',
+  'Algeria': 'ALG',
+  'Austria': 'AUT',
+  'Jordan': 'JOR',
+  'Portugal': 'POR',
+  'DR Congo': 'COD',
+  'Uzbekistan': 'UZB',
+  'Colombia': 'COL',
+  'England': 'ENG',
+  'Croatia': 'CRO',
+  'Ghana': 'GHA',
+  'Panama': 'PAN'
+};
+var getTeam = function getTeam(id) {
+  if (!id) return {
+    n: '?',
+    f: '🏳️'
+  };
+  return TM[OFB[id] || id] || TM[id] || {
+    n: id,
+    f: '🏳️'
+  };
+};
 
 // ── OFB FETCH ────────────────────────────────────────────────
-const OFB_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
-const PROXIES = [u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,u=>`https://corsproxy.io/?${encodeURIComponent(u)}`];
-const fetchOFB = async () => {
-  for(const px of PROXIES){
-    try{const r=await fetch(px(OFB_URL),{signal:AbortSignal.timeout(8000)});if(!r.ok)continue;return await r.json();}catch{continue;}
-  }
-  return null;
-};
-const parseOFB = data => {
-  if(!data||!data.matches) return [];
-  return data.matches.map((m,i)=>{
-    const tp=(m.time||'00:00 UTC+0').split(' ');
-    const [hh,mm]=tp[0].split(':').map(Number);
-    const tz=parseInt((tp[1]||'UTC+0').replace('UTC',''))||0;
-    const d=new Date(`${m.date}T${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}:00Z`);
-    d.setHours(d.getHours()-tz);
-    const grp=m.group?`Grupo ${m.group.replace('Group ','')}`:null;
-    const sc=m.score?.ft;
-    return {id:`ofb_${i}`,home_team:OFB[m.team1]||m.team1,away_team:OFB[m.team2]||m.team2,kickoff_utc:d.toISOString(),stage:grp?'group':(m.round||'knockout'),group_name:grp,home_goals:sc?sc[0]:null,away_goals:sc?sc[1]:null,source:'openfootball'};
+var OFB_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
+var PROXIES = [function (u) {
+  return "https://api.allorigins.win/raw?url=".concat(encodeURIComponent(u));
+}, function (u) {
+  return "https://corsproxy.io/?".concat(encodeURIComponent(u));
+}];
+var fetchOFB = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+    var _i, _PROXIES, px, r, _t;
+    return _regenerator().w(function (_context2) {
+      while (1) switch (_context2.p = _context2.n) {
+        case 0:
+          _i = 0, _PROXIES = PROXIES;
+        case 1:
+          if (!(_i < _PROXIES.length)) {
+            _context2.n = 8;
+            break;
+          }
+          px = _PROXIES[_i];
+          _context2.p = 2;
+          _context2.n = 3;
+          return fetch(px(OFB_URL), {
+            signal: AbortSignal.timeout(8000)
+          });
+        case 3:
+          r = _context2.v;
+          if (r.ok) {
+            _context2.n = 4;
+            break;
+          }
+          return _context2.a(3, 7);
+        case 4:
+          _context2.n = 5;
+          return r.json();
+        case 5:
+          return _context2.a(2, _context2.v);
+        case 6:
+          _context2.p = 6;
+          _t = _context2.v;
+          return _context2.a(3, 7);
+        case 7:
+          _i++;
+          _context2.n = 1;
+          break;
+        case 8:
+          return _context2.a(2, null);
+      }
+    }, _callee2, null, [[2, 6]]);
+  }));
+  return function fetchOFB() {
+    return _ref4.apply(this, arguments);
+  };
+}();
+var parseOFB = function parseOFB(data) {
+  if (!data || !data.matches) return [];
+  return data.matches.map(function (m, i) {
+    var _m$score;
+    var tp = (m.time || '00:00 UTC+0').split(' ');
+    var _tp$0$split$map = tp[0].split(':').map(Number),
+      _tp$0$split$map2 = _slicedToArray(_tp$0$split$map, 2),
+      hh = _tp$0$split$map2[0],
+      mm = _tp$0$split$map2[1];
+    var tz = parseInt((tp[1] || 'UTC+0').replace('UTC', '')) || 0;
+    var d = new Date("".concat(m.date, "T").concat(String(hh).padStart(2, '0'), ":").concat(String(mm).padStart(2, '0'), ":00Z"));
+    d.setHours(d.getHours() - tz);
+    var grp = m.group ? "Grupo ".concat(m.group.replace('Group ', '')) : null;
+    var sc = (_m$score = m.score) === null || _m$score === void 0 ? void 0 : _m$score.ft;
+    return {
+      id: "ofb_".concat(i),
+      home_team: OFB[m.team1] || m.team1,
+      away_team: OFB[m.team2] || m.team2,
+      kickoff_utc: d.toISOString(),
+      stage: grp ? 'group' : m.round || 'knockout',
+      group_name: grp,
+      home_goals: sc ? sc[0] : null,
+      away_goals: sc ? sc[1] : null,
+      source: 'openfootball'
+    };
   });
 };
 
 // ── HELPERS ──────────────────────────────────────────────────
-const locked = ko => (new Date(ko)-new Date())<3600000;
-const pts = (ph,pa,rh,ra) => { if(rh===null||ra===null||ph===null||pa===null) return null; if(ph===rh&&pa===ra) return 3; const pr=ph>pa?1:ph<pa?-1:0,rr=rh>ra?1:rh<ra?-1:0; return pr===rr?1:0; };
-const fmtD = dt => { if(!dt) return ''; const d=new Date(dt); return d.toLocaleDateString('es-AR',{weekday:'short',day:'numeric',month:'short'})+' '+d.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'}); };
-const cdown = ko => { const d=new Date(ko)-new Date(); if(d<=0) return null; if(d<3600000) return `Cierra en ${Math.floor(d/60000)}m`; const h=Math.floor(d/3600000); return h<24?`Cierra en ${h}h`:`${Math.floor(h/24)}d`; };
+var locked = function locked(ko) {
+  return new Date(ko) - new Date() < 3600000;
+};
+var pts = function pts(ph, pa, rh, ra) {
+  if (rh === null || ra === null || ph === null || pa === null) return null;
+  if (ph === rh && pa === ra) return 3;
+  var pr = ph > pa ? 1 : ph < pa ? -1 : 0,
+    rr = rh > ra ? 1 : rh < ra ? -1 : 0;
+  return pr === rr ? 1 : 0;
+};
+var fmtD = function fmtD(dt) {
+  if (!dt) return '';
+  var d = new Date(dt);
+  return d.toLocaleDateString('es-AR', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short'
+  }) + ' ' + d.toLocaleTimeString('es-AR', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+var cdown = function cdown(ko) {
+  var d = new Date(ko) - new Date();
+  if (d <= 0) return null;
+  if (d < 3600000) return "Cierra en ".concat(Math.floor(d / 60000), "m");
+  var h = Math.floor(d / 3600000);
+  return h < 24 ? "Cierra en ".concat(h, "h") : "".concat(Math.floor(h / 24), "d");
+};
 
 // ── APP ──────────────────────────────────────────────────────
 function App() {
-  const [cfg,setCfg]=useState(getConfig());
-  const [ses,setSes]=useState(getSession());
-  const [tab,setTab]=useState('partidos');
-  const upCfg = c => { saveConfig(c); setCfg(c); };
-  const supa = mkSupa(cfg.supabaseUrl, cfg.supabaseKey, ses?.access_token);
-  const isAdmin = !cfg.adminEmail || ses?.user?.email===cfg.adminEmail;
-  if(!ses) return <AuthScreen supa={supa} onLogin={s=>{saveSession(s);setSes(s);}}/>;
-  return (
-    <div>
-      <header className="hdr">
-        <div className="hdr-i">
-          <div className="logo">PRODE <span>MUNDIAL</span> 2026</div>
-          <div className="uinfo">
-            <span className="uname">{ses.user?.email?.split('@')[0]}</span>
-            <button className="btn-out" onClick={()=>{clearSession();setSes(null);}}>Salir</button>
-          </div>
-        </div>
-      </header>
-      <nav className="nav">
-        <div className="nav-i">
-          {[{id:'partidos',l:'⚽ Partidos'},{id:'miprede',l:'📋 Mi Prode'},{id:'tabla',l:'🏆 Tabla'},...(isAdmin?[{id:'admin',l:'⚙️ Admin'}]:[])].map(t=>(
-            <button key={t.id} className={`ntab ${tab===t.id?'on':''}`} onClick={()=>setTab(t.id)}>{t.l}</button>
-          ))}
-        </div>
-      </nav>
-      <main className="main">
-        {tab==='partidos' && <Partidos supa={supa} ses={ses} cfg={cfg}/>}
-        {tab==='miprede' && <MiPrede supa={supa} ses={ses} cfg={cfg}/>}
-        {tab==='tabla'   && <Tabla   supa={supa} ses={ses} cfg={cfg}/>}
-        {tab==='admin'   && <Admin   supa={supa} ses={ses} cfg={cfg} upCfg={upCfg}/>}
-      </main>
-    </div>
-  );
+  var _ses$user, _ses$user2;
+  var _useState = useState(getConfig()),
+    _useState2 = _slicedToArray(_useState, 2),
+    cfg = _useState2[0],
+    setCfg = _useState2[1];
+  var _useState3 = useState(getSession()),
+    _useState4 = _slicedToArray(_useState3, 2),
+    ses = _useState4[0],
+    setSes = _useState4[1];
+  var _useState5 = useState('partidos'),
+    _useState6 = _slicedToArray(_useState5, 2),
+    tab = _useState6[0],
+    setTab = _useState6[1];
+  var upCfg = function upCfg(c) {
+    saveConfig(c);
+    setCfg(c);
+  };
+  var supa = mkSupa(cfg.supabaseUrl, cfg.supabaseKey, ses === null || ses === void 0 ? void 0 : ses.access_token);
+  var isAdmin = !cfg.adminEmail || (ses === null || ses === void 0 || (_ses$user = ses.user) === null || _ses$user === void 0 ? void 0 : _ses$user.email) === cfg.adminEmail;
+  if (!ses) return /*#__PURE__*/React.createElement(AuthScreen, {
+    supa: supa,
+    onLogin: function onLogin(s) {
+      saveSession(s);
+      setSes(s);
+    }
+  });
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("header", {
+    className: "hdr"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hdr-i"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "logo"
+  }, "PRODE ", /*#__PURE__*/React.createElement("span", null, "MUNDIAL"), " 2026"), /*#__PURE__*/React.createElement("div", {
+    className: "uinfo"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "uname"
+  }, (_ses$user2 = ses.user) === null || _ses$user2 === void 0 || (_ses$user2 = _ses$user2.email) === null || _ses$user2 === void 0 ? void 0 : _ses$user2.split('@')[0]), /*#__PURE__*/React.createElement("button", {
+    className: "btn-out",
+    onClick: function onClick() {
+      clearSession();
+      setSes(null);
+    }
+  }, "Salir")))), /*#__PURE__*/React.createElement("nav", {
+    className: "nav"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "nav-i"
+  }, [{
+    id: 'partidos',
+    l: '⚽ Partidos'
+  }, {
+    id: 'miprede',
+    l: '📋 Mi Prode'
+  }, {
+    id: 'tabla',
+    l: '🏆 Tabla'
+  }].concat(_toConsumableArray(isAdmin ? [{
+    id: 'admin',
+    l: '⚙️ Admin'
+  }] : [])).map(function (t) {
+    return /*#__PURE__*/React.createElement("button", {
+      key: t.id,
+      className: "ntab ".concat(tab === t.id ? 'on' : ''),
+      onClick: function onClick() {
+        return setTab(t.id);
+      }
+    }, t.l);
+  }))), /*#__PURE__*/React.createElement("main", {
+    className: "main"
+  }, tab === 'partidos' && /*#__PURE__*/React.createElement(Partidos, {
+    supa: supa,
+    ses: ses,
+    cfg: cfg
+  }), tab === 'miprede' && /*#__PURE__*/React.createElement(MiPrede, {
+    supa: supa,
+    ses: ses,
+    cfg: cfg
+  }), tab === 'tabla' && /*#__PURE__*/React.createElement(Tabla, {
+    supa: supa,
+    ses: ses,
+    cfg: cfg
+  }), tab === 'admin' && /*#__PURE__*/React.createElement(Admin, {
+    supa: supa,
+    ses: ses,
+    cfg: cfg,
+    upCfg: upCfg
+  })));
 }
 
 // ── AUTH ─────────────────────────────────────────────────────
-function AuthScreen({supa,onLogin}) {
-  const [mode,setMode]=useState('login');
-  const [email,setEmail]=useState('');const [pass,setPass]=useState('');const [name,setName]=useState('');
-  const [load,setLoad]=useState(false);const [err,setErr]=useState('');const [msg,setMsg]=useState('');
-  const go = async()=>{
-    setErr('');setMsg('');
-    if(!email||!pass){setErr('Completá todos los campos');return;}
-    setLoad(true);
-    try{
-      if(mode==='register'){
-        const d=await supa.signUp(email,pass);
-        if(d.user){try{await supa.post('profiles',{id:d.user.id,email,display_name:name||email.split('@')[0]},'return=minimal,resolution=ignore-duplicates');}catch{}}
-        setMsg('¡Registrado! Revisá tu email para confirmar, luego ingresá.');
-      }else{
-        const d=await supa.signIn(email,pass);onLogin(d);
-      }
-    }catch(e){setErr(e?.error_description||e?.message||'Error');}
-    setLoad(false);
-  };
-  return (
-    <div className="auth-wrap">
-      <div className="auth-box">
-        <div className="auth-logo">⚽ PRODE</div>
-        <div className="auth-sub">MUNDIAL 2026 — ENTRE AMIGOS</div>
-        <div className="atog">
-          <button className={`atog-btn ${mode==='login'?'on':''}`} onClick={()=>setMode('login')}>Ingresar</button>
-          <button className={`atog-btn ${mode==='register'?'on':''}`} onClick={()=>setMode('register')}>Registrarse</button>
-        </div>
-        {err&&<div className="err">{err}</div>}
-        {msg&&<div className="ok">{msg}</div>}
-        {mode==='register'&&<div className="field"><label>Tu nombre</label><input value={name} onChange={e=>setName(e.target.value)} placeholder="Como querés aparecer en la tabla"/></div>}
-        <div className="field"><label>Email</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="vos@email.com" onKeyDown={e=>e.key==='Enter'&&go()}/></div>
-        <div className="field"><label>Contraseña</label><input type="password" value={pass} onChange={e=>setPass(e.target.value)} placeholder="••••••••" onKeyDown={e=>e.key==='Enter'&&go()}/></div>
-        <button className="btn-p" onClick={go} disabled={load}>{load?'Procesando...':(mode==='login'?'Ingresar':'Crear cuenta')}</button>
-      </div>
-    </div>
-  );
+function AuthScreen(_ref5) {
+  var supa = _ref5.supa,
+    onLogin = _ref5.onLogin;
+  var _useState7 = useState('login'),
+    _useState8 = _slicedToArray(_useState7, 2),
+    mode = _useState8[0],
+    setMode = _useState8[1];
+  var _useState9 = useState(''),
+    _useState0 = _slicedToArray(_useState9, 2),
+    email = _useState0[0],
+    setEmail = _useState0[1];
+  var _useState1 = useState(''),
+    _useState10 = _slicedToArray(_useState1, 2),
+    pass = _useState10[0],
+    setPass = _useState10[1];
+  var _useState11 = useState(''),
+    _useState12 = _slicedToArray(_useState11, 2),
+    name = _useState12[0],
+    setName = _useState12[1];
+  var _useState13 = useState(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    load = _useState14[0],
+    setLoad = _useState14[1];
+  var _useState15 = useState(''),
+    _useState16 = _slicedToArray(_useState15, 2),
+    err = _useState16[0],
+    setErr = _useState16[1];
+  var _useState17 = useState(''),
+    _useState18 = _slicedToArray(_useState17, 2),
+    msg = _useState18[0],
+    setMsg = _useState18[1];
+  var go = /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var d, _d, _t2, _t3;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.p = _context3.n) {
+          case 0:
+            setErr('');
+            setMsg('');
+            if (!(!email || !pass)) {
+              _context3.n = 1;
+              break;
+            }
+            setErr('Completá todos los campos');
+            return _context3.a(2);
+          case 1:
+            setLoad(true);
+            _context3.p = 2;
+            if (!(mode === 'register')) {
+              _context3.n = 8;
+              break;
+            }
+            _context3.n = 3;
+            return supa.signUp(email, pass);
+          case 3:
+            d = _context3.v;
+            if (!d.user) {
+              _context3.n = 7;
+              break;
+            }
+            _context3.p = 4;
+            _context3.n = 5;
+            return supa.post('profiles', {
+              id: d.user.id,
+              email: email,
+              display_name: name || email.split('@')[0]
+            }, 'return=minimal,resolution=ignore-duplicates');
+          case 5:
+            _context3.n = 7;
+            break;
+          case 6:
+            _context3.p = 6;
+            _t2 = _context3.v;
+          case 7:
+            setMsg('¡Registrado! Revisá tu email para confirmar, luego ingresá.');
+            _context3.n = 10;
+            break;
+          case 8:
+            _context3.n = 9;
+            return supa.signIn(email, pass);
+          case 9:
+            _d = _context3.v;
+            onLogin(_d);
+          case 10:
+            _context3.n = 12;
+            break;
+          case 11:
+            _context3.p = 11;
+            _t3 = _context3.v;
+            setErr((_t3 === null || _t3 === void 0 ? void 0 : _t3.error_description) || (_t3 === null || _t3 === void 0 ? void 0 : _t3.message) || 'Error');
+          case 12:
+            setLoad(false);
+          case 13:
+            return _context3.a(2);
+        }
+      }, _callee3, null, [[4, 6], [2, 11]]);
+    }));
+    return function go() {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/React.createElement("div", {
+    className: "auth-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "auth-box"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "auth-logo"
+  }, "\u26BD PRODE"), /*#__PURE__*/React.createElement("div", {
+    className: "auth-sub"
+  }, "MUNDIAL 2026 \u2014 ENTRE AMIGOS"), /*#__PURE__*/React.createElement("div", {
+    className: "atog"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "atog-btn ".concat(mode === 'login' ? 'on' : ''),
+    onClick: function onClick() {
+      return setMode('login');
+    }
+  }, "Ingresar"), /*#__PURE__*/React.createElement("button", {
+    className: "atog-btn ".concat(mode === 'register' ? 'on' : ''),
+    onClick: function onClick() {
+      return setMode('register');
+    }
+  }, "Registrarse")), err && /*#__PURE__*/React.createElement("div", {
+    className: "err"
+  }, err), msg && /*#__PURE__*/React.createElement("div", {
+    className: "ok"
+  }, msg), mode === 'register' && /*#__PURE__*/React.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/React.createElement("label", null, "Tu nombre"), /*#__PURE__*/React.createElement("input", {
+    value: name,
+    onChange: function onChange(e) {
+      return setName(e.target.value);
+    },
+    placeholder: "Como quer\xE9s aparecer en la tabla"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/React.createElement("label", null, "Email"), /*#__PURE__*/React.createElement("input", {
+    type: "email",
+    value: email,
+    onChange: function onChange(e) {
+      return setEmail(e.target.value);
+    },
+    placeholder: "vos@email.com",
+    onKeyDown: function onKeyDown(e) {
+      return e.key === 'Enter' && go();
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/React.createElement("label", null, "Contrase\xF1a"), /*#__PURE__*/React.createElement("input", {
+    type: "password",
+    value: pass,
+    onChange: function onChange(e) {
+      return setPass(e.target.value);
+    },
+    placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
+    onKeyDown: function onKeyDown(e) {
+      return e.key === 'Enter' && go();
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    className: "btn-p",
+    onClick: go,
+    disabled: load
+  }, load ? 'Procesando...' : mode === 'login' ? 'Ingresar' : 'Crear cuenta')));
 }
 
 // ── PARTIDOS ─────────────────────────────────────────────────
-function Partidos({supa,ses,cfg}) {
-  const [matches,setMatches]=useState([]);
-  const [preds,setPreds]=useState({});
-  const [load,setLoad]=useState(true);
-  const [sel,setSel]=useState(null);
-  const [grp,setGrp]=useState('ALL');
-  const uid=ses.user?.id;
-  const load_ = useCallback(async()=>{
-    setLoad(true);
-    try{
-      const [m,p]=await Promise.all([
-        supa.get('matches','select=*&order=kickoff_utc.asc'),
-        supa.get('predictions',`select=*&user_id=eq.${uid}`)
-      ]);
-      const pm={};if(Array.isArray(p))p.forEach(x=>pm[x.match_id]=x);setPreds(pm);
-      if(Array.isArray(m)&&m.length>0){setMatches(m);}
-      else{const o=await fetchOFB();if(o)setMatches(parseOFB(o));}
-    }catch(e){console.error(e);}
-    setLoad(false);
-  },[uid]);
-  useEffect(()=>{load_();},[load_]);
-  const groups=['ALL',...new Set(matches.map(m=>m.group_name||m.stage).filter(Boolean))];
-  const filt=grp==='ALL'?matches:matches.filter(m=>(m.group_name||m.stage)===grp);
-  if(load) return <div className="loading"><div className="spin"/><p>Cargando partidos...</p></div>;
-  return (
-    <div>
-      <div className="stitle">PARTIDOS</div>
-      <div className="ssub">Tocá un partido para cargar tu predicción</div>
-      <div className="gfilt">
-        {groups.slice(0,16).map(g=><button key={g} className={`gbtn ${grp===g?'on':''}`} onClick={()=>setGrp(g)}>{g==='ALL'?'Todos':g}</button>)}
-      </div>
-      {filt.length===0&&<div className="empty"><p>No hay partidos. El admin puede sincronizarlos.</p></div>}
-      {filt.map(m=>{
-        const pr=preds[m.id];const lk=locked(m.kickoff_utc);
-        const hasR=m.home_goals!==null&&m.away_goals!==null;
-        const p=pr?pts(pr.home_goals,pr.away_goals,m.home_goals,m.away_goals):null;
-        const hm=getTeam(m.home_team),aw=getTeam(m.away_team);const cd=!lk?cdown(m.kickoff_utc):null;
-        return (
-          <div key={m.id} className={`mcard ${lk?'locked':''} ${hasR?'res':''}`} onClick={()=>!lk&&setSel(m)}>
-            <div className="mtop">
-              <div className="mmeta">
-                <span className={`badge ${m.stage==='group'||m.group_name?'bg':'bko'}`}>{m.group_name||m.stage||'Partido'}</span>
-                {lk&&<span className="badge bl">🔒 Cerrado</span>}
-                {!lk&&cd&&<span className="badge bo">⏱ {cd}</span>}
-                {hasR&&<span className="badge bd">✓ Final</span>}
-              </div>
-              <span className="mdate">{fmtD(m.kickoff_utc)}</span>
-            </div>
-            <div className="mteams">
-              <div className="team"><span className="tflag">{hm.f}</span><span className="tname">{hm.n}</span></div>
-              <div className="mvs">{hasR?<div className="score-r">{m.home_goals} - {m.away_goals}</div>:<div className="vs-t">VS</div>}</div>
-              <div className="team away"><span className="tflag">{aw.f}</span><span className="tname">{aw.n}</span></div>
-            </div>
-            {pr&&(
-              <div className="prow">
-                <span className="plabel">Tu predicción:</span>
-                <div className="pval">
-                  <span style={{color:'var(--w)'}}>{pr.home_goals} - {pr.away_goals}</span>
-                  {p!==null&&<span className={`pbadge ${p===3?'p3':p===1?'p1':'p0'}`}>{p===3?'⭐ 3 pts':p===1?'✓ 1 pt':'✗ 0 pts'}</span>}
-                  {p===null&&<span style={{fontSize:12,color:'var(--gr)'}}>Pendiente</span>}
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
-      {sel&&<PredModal match={sel} existing={preds[sel.id]} ses={ses} cfg={cfg} onClose={()=>setSel(null)} onSave={p=>{setPreds(prev=>({...prev,[sel.id]:p}));setSel(null);}}/>}
-    </div>
-  );
+function Partidos(_ref7) {
+  var _ses$user3;
+  var supa = _ref7.supa,
+    ses = _ref7.ses,
+    cfg = _ref7.cfg;
+  var _useState19 = useState([]),
+    _useState20 = _slicedToArray(_useState19, 2),
+    matches = _useState20[0],
+    setMatches = _useState20[1];
+  var _useState21 = useState({}),
+    _useState22 = _slicedToArray(_useState21, 2),
+    preds = _useState22[0],
+    setPreds = _useState22[1];
+  var _useState23 = useState(true),
+    _useState24 = _slicedToArray(_useState23, 2),
+    load = _useState24[0],
+    setLoad = _useState24[1];
+  var _useState25 = useState(null),
+    _useState26 = _slicedToArray(_useState25, 2),
+    sel = _useState26[0],
+    setSel = _useState26[1];
+  var _useState27 = useState('ALL'),
+    _useState28 = _slicedToArray(_useState27, 2),
+    grp = _useState28[0],
+    setGrp = _useState28[1];
+  var uid = (_ses$user3 = ses.user) === null || _ses$user3 === void 0 ? void 0 : _ses$user3.id;
+  var load_ = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
+    var _yield$Promise$all, _yield$Promise$all2, m, p, pm, o, _t4;
+    return _regenerator().w(function (_context4) {
+      while (1) switch (_context4.p = _context4.n) {
+        case 0:
+          setLoad(true);
+          _context4.p = 1;
+          _context4.n = 2;
+          return Promise.all([supa.get('matches', 'select=*&order=kickoff_utc.asc'), supa.get('predictions', "select=*&user_id=eq.".concat(uid))]);
+        case 2:
+          _yield$Promise$all = _context4.v;
+          _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 2);
+          m = _yield$Promise$all2[0];
+          p = _yield$Promise$all2[1];
+          pm = {};
+          if (Array.isArray(p)) p.forEach(function (x) {
+            return pm[x.match_id] = x;
+          });
+          setPreds(pm);
+          if (!(Array.isArray(m) && m.length > 0)) {
+            _context4.n = 3;
+            break;
+          }
+          setMatches(m);
+          _context4.n = 5;
+          break;
+        case 3:
+          _context4.n = 4;
+          return fetchOFB();
+        case 4:
+          o = _context4.v;
+          if (o) setMatches(parseOFB(o));
+        case 5:
+          _context4.n = 7;
+          break;
+        case 6:
+          _context4.p = 6;
+          _t4 = _context4.v;
+          console.error(_t4);
+        case 7:
+          setLoad(false);
+        case 8:
+          return _context4.a(2);
+      }
+    }, _callee4, null, [[1, 6]]);
+  })), [uid]);
+  useEffect(function () {
+    load_();
+  }, [load_]);
+  var groups = ['ALL'].concat(_toConsumableArray(new Set(matches.map(function (m) {
+    return m.group_name || m.stage;
+  }).filter(Boolean))));
+  var filt = grp === 'ALL' ? matches : matches.filter(function (m) {
+    return (m.group_name || m.stage) === grp;
+  });
+  if (load) return /*#__PURE__*/React.createElement("div", {
+    className: "loading"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "spin"
+  }), /*#__PURE__*/React.createElement("p", null, "Cargando partidos..."));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "stitle"
+  }, "PARTIDOS"), /*#__PURE__*/React.createElement("div", {
+    className: "ssub"
+  }, "Toc\xE1 un partido para cargar tu predicci\xF3n"), /*#__PURE__*/React.createElement("div", {
+    className: "gfilt"
+  }, groups.slice(0, 16).map(function (g) {
+    return /*#__PURE__*/React.createElement("button", {
+      key: g,
+      className: "gbtn ".concat(grp === g ? 'on' : ''),
+      onClick: function onClick() {
+        return setGrp(g);
+      }
+    }, g === 'ALL' ? 'Todos' : g);
+  })), filt.length === 0 && /*#__PURE__*/React.createElement("div", {
+    className: "empty"
+  }, /*#__PURE__*/React.createElement("p", null, "No hay partidos. El admin puede sincronizarlos.")), filt.map(function (m) {
+    var pr = preds[m.id];
+    var lk = locked(m.kickoff_utc);
+    var hasR = m.home_goals !== null && m.away_goals !== null;
+    var p = pr ? pts(pr.home_goals, pr.away_goals, m.home_goals, m.away_goals) : null;
+    var hm = getTeam(m.home_team),
+      aw = getTeam(m.away_team);
+    var cd = !lk ? cdown(m.kickoff_utc) : null;
+    return /*#__PURE__*/React.createElement("div", {
+      key: m.id,
+      className: "mcard ".concat(lk ? 'locked' : '', " ").concat(hasR ? 'res' : ''),
+      onClick: function onClick() {
+        return !lk && setSel(m);
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mtop"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mmeta"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "badge ".concat(m.stage === 'group' || m.group_name ? 'bg' : 'bko')
+    }, m.group_name || m.stage || 'Partido'), lk && /*#__PURE__*/React.createElement("span", {
+      className: "badge bl"
+    }, "\uD83D\uDD12 Cerrado"), !lk && cd && /*#__PURE__*/React.createElement("span", {
+      className: "badge bo"
+    }, "\u23F1 ", cd), hasR && /*#__PURE__*/React.createElement("span", {
+      className: "badge bd"
+    }, "\u2713 Final")), /*#__PURE__*/React.createElement("span", {
+      className: "mdate"
+    }, fmtD(m.kickoff_utc))), /*#__PURE__*/React.createElement("div", {
+      className: "mteams"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "team"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tflag"
+    }, hm.f), /*#__PURE__*/React.createElement("span", {
+      className: "tname"
+    }, hm.n)), /*#__PURE__*/React.createElement("div", {
+      className: "mvs"
+    }, hasR ? /*#__PURE__*/React.createElement("div", {
+      className: "score-r"
+    }, m.home_goals, " - ", m.away_goals) : /*#__PURE__*/React.createElement("div", {
+      className: "vs-t"
+    }, "VS")), /*#__PURE__*/React.createElement("div", {
+      className: "team away"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tflag"
+    }, aw.f), /*#__PURE__*/React.createElement("span", {
+      className: "tname"
+    }, aw.n))), pr && /*#__PURE__*/React.createElement("div", {
+      className: "prow"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "plabel"
+    }, "Tu predicci\xF3n:"), /*#__PURE__*/React.createElement("div", {
+      className: "pval"
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--w)'
+      }
+    }, pr.home_goals, " - ", pr.away_goals), p !== null && /*#__PURE__*/React.createElement("span", {
+      className: "pbadge ".concat(p === 3 ? 'p3' : p === 1 ? 'p1' : 'p0')
+    }, p === 3 ? '⭐ 3 pts' : p === 1 ? '✓ 1 pt' : '✗ 0 pts'), p === null && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        color: 'var(--gr)'
+      }
+    }, "Pendiente"))));
+  }), sel && /*#__PURE__*/React.createElement(PredModal, {
+    match: sel,
+    existing: preds[sel.id],
+    ses: ses,
+    cfg: cfg,
+    onClose: function onClose() {
+      return setSel(null);
+    },
+    onSave: function onSave(p) {
+      setPreds(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, sel.id, p));
+      });
+      setSel(null);
+    }
+  }));
 }
 
 // ── PRED MODAL ───────────────────────────────────────────────
-function PredModal({match,existing,ses,cfg,onClose,onSave}) {
-  const [hg,setHg]=useState(existing?.home_goals??'');
-  const [ag,setAg]=useState(existing?.away_goals??'');
-  const [load,setLoad]=useState(false);const [err,setErr]=useState('');
-  const hm=getTeam(match.home_team),aw=getTeam(match.away_team);
-  const save=async()=>{
-    if(hg===''||ag==='') return;
-    setLoad(true);setErr('');
-    const supa=mkSupa(cfg.supabaseUrl,cfg.supabaseKey,ses.access_token);
-    try{
-      const d=await supa.post('predictions',{user_id:ses.user.id,match_id:match.id,home_goals:parseInt(hg),away_goals:parseInt(ag)});
-      onSave(Array.isArray(d)?d[0]:d);
-    }catch{setErr('Error al guardar. Intentá de nuevo.');}
-    setLoad(false);
-  };
-  return (
-    <div className="overlay" onClick={e=>e.target===e.currentTarget&&onClose()}>
-      <div className="modal">
-        <div className="mtitle">TU PREDICCIÓN</div>
-        <div className="mteams2">
-          <div className="mt2"><div className="mt2-flag">{hm.f}</div><div className="mt2-name">{hm.n}</div></div>
-          <div style={{color:'var(--gr)',fontSize:13}}>VS</div>
-          <div className="mt2"><div className="mt2-flag">{aw.f}</div><div className="mt2-name">{aw.n}</div></div>
-        </div>
-        <div className="sinputs">
-          <div className="siwrap"><span className="silabel">{hm.n.split(' ')[0]}</span><input className="si" type="number" min="0" max="20" value={hg} onChange={e=>setHg(e.target.value)}/></div>
-          <div className="sdash">—</div>
-          <div className="siwrap"><span className="silabel">{aw.n.split(' ')[0]}</span><input className="si" type="number" min="0" max="20" value={ag} onChange={e=>setAg(e.target.value)}/></div>
-        </div>
-        <div style={{fontSize:12,color:'var(--gr)',textAlign:'center',marginBottom:20}}>⭐ 3 pts marcador exacto · ✓ 1 pt resultado (G/E/P)</div>
-        {err&&<div className="err" style={{marginBottom:12}}>{err}</div>}
-        <div className="mactions">
-          <button className="btn-c" onClick={onClose}>Cancelar</button>
-          <button className="btn-s" onClick={save} disabled={load||hg===''||ag===''}>{load?'Guardando...':(existing?'Actualizar':'Guardar')}</button>
-        </div>
-      </div>
-    </div>
-  );
+function PredModal(_ref9) {
+  var _existing$home_goals, _existing$away_goals;
+  var match = _ref9.match,
+    existing = _ref9.existing,
+    ses = _ref9.ses,
+    cfg = _ref9.cfg,
+    onClose = _ref9.onClose,
+    onSave = _ref9.onSave;
+  var _useState29 = useState((_existing$home_goals = existing === null || existing === void 0 ? void 0 : existing.home_goals) !== null && _existing$home_goals !== void 0 ? _existing$home_goals : ''),
+    _useState30 = _slicedToArray(_useState29, 2),
+    hg = _useState30[0],
+    setHg = _useState30[1];
+  var _useState31 = useState((_existing$away_goals = existing === null || existing === void 0 ? void 0 : existing.away_goals) !== null && _existing$away_goals !== void 0 ? _existing$away_goals : ''),
+    _useState32 = _slicedToArray(_useState31, 2),
+    ag = _useState32[0],
+    setAg = _useState32[1];
+  var _useState33 = useState(false),
+    _useState34 = _slicedToArray(_useState33, 2),
+    load = _useState34[0],
+    setLoad = _useState34[1];
+  var _useState35 = useState(''),
+    _useState36 = _slicedToArray(_useState35, 2),
+    err = _useState36[0],
+    setErr = _useState36[1];
+  var hm = getTeam(match.home_team),
+    aw = getTeam(match.away_team);
+  var save = /*#__PURE__*/function () {
+    var _ref0 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5() {
+      var supa, d, _t5;
+      return _regenerator().w(function (_context5) {
+        while (1) switch (_context5.p = _context5.n) {
+          case 0:
+            if (!(hg === '' || ag === '')) {
+              _context5.n = 1;
+              break;
+            }
+            return _context5.a(2);
+          case 1:
+            setLoad(true);
+            setErr('');
+            supa = mkSupa(cfg.supabaseUrl, cfg.supabaseKey, ses.access_token);
+            _context5.p = 2;
+            _context5.n = 3;
+            return supa.post('predictions', {
+              user_id: ses.user.id,
+              match_id: match.id,
+              home_goals: parseInt(hg),
+              away_goals: parseInt(ag)
+            });
+          case 3:
+            d = _context5.v;
+            onSave(Array.isArray(d) ? d[0] : d);
+            _context5.n = 5;
+            break;
+          case 4:
+            _context5.p = 4;
+            _t5 = _context5.v;
+            setErr('Error al guardar. Intentá de nuevo.');
+          case 5:
+            setLoad(false);
+          case 6:
+            return _context5.a(2);
+        }
+      }, _callee5, null, [[2, 4]]);
+    }));
+    return function save() {
+      return _ref0.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/React.createElement("div", {
+    className: "overlay",
+    onClick: function onClick(e) {
+      return e.target === e.currentTarget && onClose();
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "modal"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mtitle"
+  }, "TU PREDICCI\xD3N"), /*#__PURE__*/React.createElement("div", {
+    className: "mteams2"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mt2"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mt2-flag"
+  }, hm.f), /*#__PURE__*/React.createElement("div", {
+    className: "mt2-name"
+  }, hm.n)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: 'var(--gr)',
+      fontSize: 13
+    }
+  }, "VS"), /*#__PURE__*/React.createElement("div", {
+    className: "mt2"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mt2-flag"
+  }, aw.f), /*#__PURE__*/React.createElement("div", {
+    className: "mt2-name"
+  }, aw.n))), /*#__PURE__*/React.createElement("div", {
+    className: "sinputs"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "siwrap"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "silabel"
+  }, hm.n.split(' ')[0]), /*#__PURE__*/React.createElement("input", {
+    className: "si",
+    type: "number",
+    min: "0",
+    max: "20",
+    value: hg,
+    onChange: function onChange(e) {
+      return setHg(e.target.value);
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "sdash"
+  }, "\u2014"), /*#__PURE__*/React.createElement("div", {
+    className: "siwrap"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "silabel"
+  }, aw.n.split(' ')[0]), /*#__PURE__*/React.createElement("input", {
+    className: "si",
+    type: "number",
+    min: "0",
+    max: "20",
+    value: ag,
+    onChange: function onChange(e) {
+      return setAg(e.target.value);
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: 'var(--gr)',
+      textAlign: 'center',
+      marginBottom: 20
+    }
+  }, "\u2B50 3 pts marcador exacto \xB7 \u2713 1 pt resultado (G/E/P)"), err && /*#__PURE__*/React.createElement("div", {
+    className: "err",
+    style: {
+      marginBottom: 12
+    }
+  }, err), /*#__PURE__*/React.createElement("div", {
+    className: "mactions"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn-c",
+    onClick: onClose
+  }, "Cancelar"), /*#__PURE__*/React.createElement("button", {
+    className: "btn-s",
+    onClick: save,
+    disabled: load || hg === '' || ag === ''
+  }, load ? 'Guardando...' : existing ? 'Actualizar' : 'Guardar'))));
 }
 
 // ── MI PRODE ─────────────────────────────────────────────────
-function MiPrede({supa,ses,cfg}) {
-  const [matches,setMatches]=useState([]);
-  const [preds,setPreds]=useState({});
-  const [pod,setPod]=useState(null);
-  const [pf,setPf]=useState({first:'',second:'',third:''});
-  const [load,setLoad]=useState(true);
-  const [savP,setSavP]=useState(false);
-  const [pMsg,setPMsg]=useState('');
-  const uid=ses.user?.id;
-  useEffect(()=>{
-    const go=async()=>{
-      setLoad(true);
-      const [m,p,pd]=await Promise.all([supa.get('matches','select=*&order=kickoff_utc.asc'),supa.get('predictions',`select=*&user_id=eq.${uid}`),supa.get('podium_picks',`select=*&user_id=eq.${uid}`)]);
-      setMatches(Array.isArray(m)?m:[]);
-      const pm={};if(Array.isArray(p))p.forEach(x=>pm[x.match_id]=x);setPreds(pm);
-      if(Array.isArray(pd)&&pd.length>0){setPod(pd[0]);setPf({first:pd[0].first_team,second:pd[0].second_team,third:pd[0].third_team});}
-      setLoad(false);
-    };go();
-  },[uid]);
-  const firstKo=matches.length>0?matches[0].kickoff_utc:null;
-  const podLocked=firstKo?locked(firstKo):false;
-  const savePod=async()=>{
-    if(!pf.first||!pf.second||!pf.third){setPMsg('Elegí los 3 equipos');return;}
-    if(new Set([pf.first,pf.second,pf.third]).size<3){setPMsg('Elegí 3 equipos distintos');return;}
-    setSavP(true);setPMsg('');
-    try{const d=await supa.post('podium_picks',{user_id:uid,first_team:pf.first,second_team:pf.second,third_team:pf.third});setPod(Array.isArray(d)?d[0]:d);setPMsg('¡Podio guardado!');}
-    catch{setPMsg('Error al guardar');}
-    setSavP(false);
-  };
-  const totalPts=Object.values(preds).reduce((acc,pr)=>{const m=matches.find(x=>x.id===pr.match_id);return acc+(m?pts(pr.home_goals,pr.away_goals,m.home_goals,m.away_goals)||0:0);},0);
-  const exact=Object.values(preds).filter(pr=>{const m=matches.find(x=>x.id===pr.match_id);return m&&pts(pr.home_goals,pr.away_goals,m.home_goals,m.away_goals)===3;}).length;
-  if(load) return <div className="loading"><div className="spin"/><p>Cargando...</p></div>;
-  return (
-    <div>
-      <div className="stitle">MI PRODE</div>
-      <div className="ssub">Tu resumen personal</div>
-      <div className="stats">
-        <div className="stat"><div className="statv">{totalPts}</div><div className="statl">Puntos</div></div>
-        <div className="stat"><div className="statv">{Object.keys(preds).length}</div><div className="statl">Predicciones</div></div>
-        <div className="stat"><div className="statv">{exact}</div><div className="statl">Exactas ⭐</div></div>
-      </div>
-      <div className="pod-card">
-        <div className="pod-title">🏆 PREDICCIÓN DE PODIO</div>
-        <div className="pod-sub">{podLocked?'⛔ El torneo ya comenzó. No podés modificar el podio.':'Elegí antes del primer partido. Campeón 7 pts · 2do 4 pts · 3ro 2 pts.'}</div>
-        {[{k:'first',l:'🥇 Campeón (+7 pts)'},{k:'second',l:'🥈 Segundo (+4 pts)'},{k:'third',l:'🥉 Tercero (+2 pts)'}].map(({k,l})=>{
-          const t=pf[k]?getTeam(pf[k]):null;
-          return (
-            <div className="pod-row" key={k}>
-              <span className="pod-lbl">{l}</span>
-              {podLocked&&pod
-                ? <span style={{fontSize:15}}>{t?`${t.f} ${t.n}`:'—'}</span>
-                : <select className="pod-sel" value={pf[k]} onChange={e=>setPf(f=>({...f,[k]:e.target.value}))} disabled={podLocked}>
-                    <option value="">Elegir equipo...</option>
-                    {Object.entries(GROUPS).map(([g,ts])=>(
-                      <optgroup key={g} label={g}>{ts.map(t=><option key={t.id} value={t.id}>{t.f} {t.n}</option>)}</optgroup>
-                    ))}
-                  </select>
+function MiPrede(_ref1) {
+  var _ses$user4;
+  var supa = _ref1.supa,
+    ses = _ref1.ses,
+    cfg = _ref1.cfg;
+  var _useState37 = useState([]),
+    _useState38 = _slicedToArray(_useState37, 2),
+    matches = _useState38[0],
+    setMatches = _useState38[1];
+  var _useState39 = useState({}),
+    _useState40 = _slicedToArray(_useState39, 2),
+    preds = _useState40[0],
+    setPreds = _useState40[1];
+  var _useState41 = useState(null),
+    _useState42 = _slicedToArray(_useState41, 2),
+    pod = _useState42[0],
+    setPod = _useState42[1];
+  var _useState43 = useState({
+      first: '',
+      second: '',
+      third: ''
+    }),
+    _useState44 = _slicedToArray(_useState43, 2),
+    pf = _useState44[0],
+    setPf = _useState44[1];
+  var _useState45 = useState(true),
+    _useState46 = _slicedToArray(_useState45, 2),
+    load = _useState46[0],
+    setLoad = _useState46[1];
+  var _useState47 = useState(false),
+    _useState48 = _slicedToArray(_useState47, 2),
+    savP = _useState48[0],
+    setSavP = _useState48[1];
+  var _useState49 = useState(''),
+    _useState50 = _slicedToArray(_useState49, 2),
+    pMsg = _useState50[0],
+    setPMsg = _useState50[1];
+  var uid = (_ses$user4 = ses.user) === null || _ses$user4 === void 0 ? void 0 : _ses$user4.id;
+  useEffect(function () {
+    var go = /*#__PURE__*/function () {
+      var _ref10 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6() {
+        var _yield$Promise$all3, _yield$Promise$all4, m, p, pd, pm;
+        return _regenerator().w(function (_context6) {
+          while (1) switch (_context6.n) {
+            case 0:
+              setLoad(true);
+              _context6.n = 1;
+              return Promise.all([supa.get('matches', 'select=*&order=kickoff_utc.asc'), supa.get('predictions', "select=*&user_id=eq.".concat(uid)), supa.get('podium_picks', "select=*&user_id=eq.".concat(uid))]);
+            case 1:
+              _yield$Promise$all3 = _context6.v;
+              _yield$Promise$all4 = _slicedToArray(_yield$Promise$all3, 3);
+              m = _yield$Promise$all4[0];
+              p = _yield$Promise$all4[1];
+              pd = _yield$Promise$all4[2];
+              setMatches(Array.isArray(m) ? m : []);
+              pm = {};
+              if (Array.isArray(p)) p.forEach(function (x) {
+                return pm[x.match_id] = x;
+              });
+              setPreds(pm);
+              if (Array.isArray(pd) && pd.length > 0) {
+                setPod(pd[0]);
+                setPf({
+                  first: pd[0].first_team,
+                  second: pd[0].second_team,
+                  third: pd[0].third_team
+                });
               }
-            </div>
-          );
-        })}
-        {!podLocked&&(
-          <>
-            {pMsg&&<div className={pMsg.includes('Error')||pMsg.includes('Elegí')?'err':'ok'} style={{marginTop:12}}>{pMsg}</div>}
-            <button className="btn-pod" onClick={savePod} disabled={savP}>{savP?'Guardando...':(pod?'Actualizar podio':'Guardar podio')}</button>
-          </>
-        )}
-      </div>
-      <div className="stitle" style={{fontSize:18,marginTop:8}}>MIS PREDICCIONES</div>
-      <div className="ssub">{Object.keys(preds).length} cargadas</div>
-      {matches.filter(m=>preds[m.id]).map(m=>{
-        const pr=preds[m.id];const p=pts(pr.home_goals,pr.away_goals,m.home_goals,m.away_goals);
-        const hm=getTeam(m.home_team),aw=getTeam(m.away_team);const hasR=m.home_goals!==null&&m.away_goals!==null;
-        return (
-          <div key={m.id} className="mcard">
-            <div className="mtop"><span className="badge bg">{m.group_name||m.stage}</span><span className="mdate">{fmtD(m.kickoff_utc)}</span></div>
-            <div className="mteams">
-              <div className="team"><span className="tflag">{hm.f}</span><span className="tname">{hm.n}</span></div>
-              <div className="mvs">{hasR?<div className="score-r">{m.home_goals} - {m.away_goals}</div>:<div className="vs-t">VS</div>}</div>
-              <div className="team away"><span className="tflag">{aw.f}</span><span className="tname">{aw.n}</span></div>
-            </div>
-            <div className="prow">
-              <span className="plabel">Tu pred: <strong style={{color:'var(--w)'}}>{pr.home_goals} - {pr.away_goals}</strong></span>
-              <div className="pval">{p!==null?<span className={`pbadge ${p===3?'p3':p===1?'p1':'p0'}`}>{p===3?'⭐ 3 pts':p===1?'✓ 1 pt':'✗ 0 pts'}</span>:<span style={{fontSize:12,color:'var(--gr)'}}>Pendiente</span>}</div>
-            </div>
-          </div>
-        );
-      })}
-      {Object.keys(preds).length===0&&<div className="empty"><p>Todavía no cargaste predicciones.</p><p style={{marginTop:8,fontSize:12}}>Andá a "Partidos" y tocá cualquier match.</p></div>}
-    </div>
-  );
+              setLoad(false);
+            case 2:
+              return _context6.a(2);
+          }
+        }, _callee6);
+      }));
+      return function go() {
+        return _ref10.apply(this, arguments);
+      };
+    }();
+    go();
+  }, [uid]);
+  var firstKo = matches.length > 0 ? matches[0].kickoff_utc : null;
+  var podLocked = firstKo ? locked(firstKo) : false;
+  var savePod = /*#__PURE__*/function () {
+    var _ref11 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7() {
+      var d, _t6;
+      return _regenerator().w(function (_context7) {
+        while (1) switch (_context7.p = _context7.n) {
+          case 0:
+            if (!(!pf.first || !pf.second || !pf.third)) {
+              _context7.n = 1;
+              break;
+            }
+            setPMsg('Elegí los 3 equipos');
+            return _context7.a(2);
+          case 1:
+            if (!(new Set([pf.first, pf.second, pf.third]).size < 3)) {
+              _context7.n = 2;
+              break;
+            }
+            setPMsg('Elegí 3 equipos distintos');
+            return _context7.a(2);
+          case 2:
+            setSavP(true);
+            setPMsg('');
+            _context7.p = 3;
+            _context7.n = 4;
+            return supa.post('podium_picks', {
+              user_id: uid,
+              first_team: pf.first,
+              second_team: pf.second,
+              third_team: pf.third
+            });
+          case 4:
+            d = _context7.v;
+            setPod(Array.isArray(d) ? d[0] : d);
+            setPMsg('¡Podio guardado!');
+            _context7.n = 6;
+            break;
+          case 5:
+            _context7.p = 5;
+            _t6 = _context7.v;
+            setPMsg('Error al guardar');
+          case 6:
+            setSavP(false);
+          case 7:
+            return _context7.a(2);
+        }
+      }, _callee7, null, [[3, 5]]);
+    }));
+    return function savePod() {
+      return _ref11.apply(this, arguments);
+    };
+  }();
+  var totalPts = Object.values(preds).reduce(function (acc, pr) {
+    var m = matches.find(function (x) {
+      return x.id === pr.match_id;
+    });
+    return acc + (m ? pts(pr.home_goals, pr.away_goals, m.home_goals, m.away_goals) || 0 : 0);
+  }, 0);
+  var exact = Object.values(preds).filter(function (pr) {
+    var m = matches.find(function (x) {
+      return x.id === pr.match_id;
+    });
+    return m && pts(pr.home_goals, pr.away_goals, m.home_goals, m.away_goals) === 3;
+  }).length;
+  if (load) return /*#__PURE__*/React.createElement("div", {
+    className: "loading"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "spin"
+  }), /*#__PURE__*/React.createElement("p", null, "Cargando..."));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "stitle"
+  }, "MI PRODE"), /*#__PURE__*/React.createElement("div", {
+    className: "ssub"
+  }, "Tu resumen personal"), /*#__PURE__*/React.createElement("div", {
+    className: "stats"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "statv"
+  }, totalPts), /*#__PURE__*/React.createElement("div", {
+    className: "statl"
+  }, "Puntos")), /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "statv"
+  }, Object.keys(preds).length), /*#__PURE__*/React.createElement("div", {
+    className: "statl"
+  }, "Predicciones")), /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "statv"
+  }, exact), /*#__PURE__*/React.createElement("div", {
+    className: "statl"
+  }, "Exactas \u2B50"))), /*#__PURE__*/React.createElement("div", {
+    className: "pod-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "pod-title"
+  }, "\uD83C\uDFC6 PREDICCI\xD3N DE PODIO"), /*#__PURE__*/React.createElement("div", {
+    className: "pod-sub"
+  }, podLocked ? '⛔ El torneo ya comenzó. No podés modificar el podio.' : 'Elegí antes del primer partido. Campeón 7 pts · 2do 4 pts · 3ro 2 pts.'), [{
+    k: 'first',
+    l: '🥇 Campeón (+7 pts)'
+  }, {
+    k: 'second',
+    l: '🥈 Segundo (+4 pts)'
+  }, {
+    k: 'third',
+    l: '🥉 Tercero (+2 pts)'
+  }].map(function (_ref12) {
+    var k = _ref12.k,
+      l = _ref12.l;
+    var t = pf[k] ? getTeam(pf[k]) : null;
+    return /*#__PURE__*/React.createElement("div", {
+      className: "pod-row",
+      key: k
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "pod-lbl"
+    }, l), podLocked && pod ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 15
+      }
+    }, t ? "".concat(t.f, " ").concat(t.n) : '—') : /*#__PURE__*/React.createElement("select", {
+      className: "pod-sel",
+      value: pf[k],
+      onChange: function onChange(e) {
+        return setPf(function (f) {
+          return _objectSpread(_objectSpread({}, f), {}, _defineProperty({}, k, e.target.value));
+        });
+      },
+      disabled: podLocked
+    }, /*#__PURE__*/React.createElement("option", {
+      value: ""
+    }, "Elegir equipo..."), Object.entries(GROUPS).map(function (_ref13) {
+      var _ref14 = _slicedToArray(_ref13, 2),
+        g = _ref14[0],
+        ts = _ref14[1];
+      return /*#__PURE__*/React.createElement("optgroup", {
+        key: g,
+        label: g
+      }, ts.map(function (t) {
+        return /*#__PURE__*/React.createElement("option", {
+          key: t.id,
+          value: t.id
+        }, t.f, " ", t.n);
+      }));
+    })));
+  }), !podLocked && /*#__PURE__*/React.createElement(React.Fragment, null, pMsg && /*#__PURE__*/React.createElement("div", {
+    className: pMsg.includes('Error') || pMsg.includes('Elegí') ? 'err' : 'ok',
+    style: {
+      marginTop: 12
+    }
+  }, pMsg), /*#__PURE__*/React.createElement("button", {
+    className: "btn-pod",
+    onClick: savePod,
+    disabled: savP
+  }, savP ? 'Guardando...' : pod ? 'Actualizar podio' : 'Guardar podio'))), /*#__PURE__*/React.createElement("div", {
+    className: "stitle",
+    style: {
+      fontSize: 18,
+      marginTop: 8
+    }
+  }, "MIS PREDICCIONES"), /*#__PURE__*/React.createElement("div", {
+    className: "ssub"
+  }, Object.keys(preds).length, " cargadas"), matches.filter(function (m) {
+    return preds[m.id];
+  }).map(function (m) {
+    var pr = preds[m.id];
+    var p = pts(pr.home_goals, pr.away_goals, m.home_goals, m.away_goals);
+    var hm = getTeam(m.home_team),
+      aw = getTeam(m.away_team);
+    var hasR = m.home_goals !== null && m.away_goals !== null;
+    return /*#__PURE__*/React.createElement("div", {
+      key: m.id,
+      className: "mcard"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mtop"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "badge bg"
+    }, m.group_name || m.stage), /*#__PURE__*/React.createElement("span", {
+      className: "mdate"
+    }, fmtD(m.kickoff_utc))), /*#__PURE__*/React.createElement("div", {
+      className: "mteams"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "team"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tflag"
+    }, hm.f), /*#__PURE__*/React.createElement("span", {
+      className: "tname"
+    }, hm.n)), /*#__PURE__*/React.createElement("div", {
+      className: "mvs"
+    }, hasR ? /*#__PURE__*/React.createElement("div", {
+      className: "score-r"
+    }, m.home_goals, " - ", m.away_goals) : /*#__PURE__*/React.createElement("div", {
+      className: "vs-t"
+    }, "VS")), /*#__PURE__*/React.createElement("div", {
+      className: "team away"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tflag"
+    }, aw.f), /*#__PURE__*/React.createElement("span", {
+      className: "tname"
+    }, aw.n))), /*#__PURE__*/React.createElement("div", {
+      className: "prow"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "plabel"
+    }, "Tu pred: ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: 'var(--w)'
+      }
+    }, pr.home_goals, " - ", pr.away_goals)), /*#__PURE__*/React.createElement("div", {
+      className: "pval"
+    }, p !== null ? /*#__PURE__*/React.createElement("span", {
+      className: "pbadge ".concat(p === 3 ? 'p3' : p === 1 ? 'p1' : 'p0')
+    }, p === 3 ? '⭐ 3 pts' : p === 1 ? '✓ 1 pt' : '✗ 0 pts') : /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        color: 'var(--gr)'
+      }
+    }, "Pendiente"))));
+  }), Object.keys(preds).length === 0 && /*#__PURE__*/React.createElement("div", {
+    className: "empty"
+  }, /*#__PURE__*/React.createElement("p", null, "Todav\xEDa no cargaste predicciones."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 8,
+      fontSize: 12
+    }
+  }, "And\xE1 a \"Partidos\" y toc\xE1 cualquier match.")));
 }
 
 // ── TABLA ────────────────────────────────────────────────────
-function Tabla({supa,ses}) {
-  const [rows,setRows]=useState([]);const [load,setLoad]=useState(true);const uid=ses.user?.id;
-  useEffect(()=>{
-    const go=async()=>{
-      setLoad(true);
-      const [profiles,matches,allP]=await Promise.all([supa.get('profiles','select=*'),supa.get('matches','select=*'),supa.get('predictions','select=*')]);
-      const mm={};if(Array.isArray(matches))matches.forEach(m=>mm[m.id]=m);
-      const lb=(Array.isArray(profiles)?profiles:[]).map(pr=>{
-        const up=(Array.isArray(allP)?allP:[]).filter(p=>p.user_id===pr.id);
-        let p=0,ex=0;
-        up.forEach(pred=>{const m=mm[pred.match_id];if(!m)return;const v=pts(pred.home_goals,pred.away_goals,m.home_goals,m.away_goals);if(v===3){p+=3;ex++;}else if(v===1){p+=1;}});
-        return {...pr,pts:p,exact:ex,preds:up.length};
-      }).sort((a,b)=>b.pts-a.pts||b.exact-a.exact);
-      setRows(lb);setLoad(false);
-    };go();
-  },[]);
-  if(load) return <div className="loading"><div className="spin"/><p>Calculando...</p></div>;
-  return (
-    <div>
-      <div className="stitle">TABLA DE POSICIONES</div>
-      <div className="ssub">{rows.length} participantes</div>
-      {rows.length===0&&<div className="empty">Todavía no hay participantes.</div>}
-      <div className="lb">
-        {rows.map((r,i)=>{
-          const isMe=r.id===uid;const pc=i===0?'t1':i===1?'t2':i===2?'t3':'';
-          return (
-            <div key={r.id} className={`lbrow ${isMe?'me':''}`}>
-              <div className={`lbpos ${pc}`}>{i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</div>
-              <div className={`lbname ${isMe?'me':''}`}>{r.display_name||r.email?.split('@')[0]}{isMe&&<span style={{fontSize:11,color:'var(--gr)',marginLeft:6}}>(vos)</span>}</div>
-              <div className="lbdet"><div>{r.preds} pred.</div><div>{r.exact}⭐</div></div>
-              <div className="lbpts">{r.pts}<div className="lbptsl">pts</div></div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+function Tabla(_ref15) {
+  var _ses$user5;
+  var supa = _ref15.supa,
+    ses = _ref15.ses;
+  var _useState51 = useState([]),
+    _useState52 = _slicedToArray(_useState51, 2),
+    rows = _useState52[0],
+    setRows = _useState52[1];
+  var _useState53 = useState(true),
+    _useState54 = _slicedToArray(_useState53, 2),
+    load = _useState54[0],
+    setLoad = _useState54[1];
+  var uid = (_ses$user5 = ses.user) === null || _ses$user5 === void 0 ? void 0 : _ses$user5.id;
+  useEffect(function () {
+    var go = /*#__PURE__*/function () {
+      var _ref16 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee8() {
+        var _yield$Promise$all5, _yield$Promise$all6, profiles, matches, allP, mm, lb;
+        return _regenerator().w(function (_context8) {
+          while (1) switch (_context8.n) {
+            case 0:
+              setLoad(true);
+              _context8.n = 1;
+              return Promise.all([supa.get('profiles', 'select=*'), supa.get('matches', 'select=*'), supa.get('predictions', 'select=*')]);
+            case 1:
+              _yield$Promise$all5 = _context8.v;
+              _yield$Promise$all6 = _slicedToArray(_yield$Promise$all5, 3);
+              profiles = _yield$Promise$all6[0];
+              matches = _yield$Promise$all6[1];
+              allP = _yield$Promise$all6[2];
+              mm = {};
+              if (Array.isArray(matches)) matches.forEach(function (m) {
+                return mm[m.id] = m;
+              });
+              lb = (Array.isArray(profiles) ? profiles : []).map(function (pr) {
+                var up = (Array.isArray(allP) ? allP : []).filter(function (p) {
+                  return p.user_id === pr.id;
+                });
+                var p = 0,
+                  ex = 0;
+                up.forEach(function (pred) {
+                  var m = mm[pred.match_id];
+                  if (!m) return;
+                  var v = pts(pred.home_goals, pred.away_goals, m.home_goals, m.away_goals);
+                  if (v === 3) {
+                    p += 3;
+                    ex++;
+                  } else if (v === 1) {
+                    p += 1;
+                  }
+                });
+                return _objectSpread(_objectSpread({}, pr), {}, {
+                  pts: p,
+                  exact: ex,
+                  preds: up.length
+                });
+              }).sort(function (a, b) {
+                return b.pts - a.pts || b.exact - a.exact;
+              });
+              setRows(lb);
+              setLoad(false);
+            case 2:
+              return _context8.a(2);
+          }
+        }, _callee8);
+      }));
+      return function go() {
+        return _ref16.apply(this, arguments);
+      };
+    }();
+    go();
+  }, []);
+  if (load) return /*#__PURE__*/React.createElement("div", {
+    className: "loading"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "spin"
+  }), /*#__PURE__*/React.createElement("p", null, "Calculando..."));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "stitle"
+  }, "TABLA DE POSICIONES"), /*#__PURE__*/React.createElement("div", {
+    className: "ssub"
+  }, rows.length, " participantes"), rows.length === 0 && /*#__PURE__*/React.createElement("div", {
+    className: "empty"
+  }, "Todav\xEDa no hay participantes."), /*#__PURE__*/React.createElement("div", {
+    className: "lb"
+  }, rows.map(function (r, i) {
+    var _r$email;
+    var isMe = r.id === uid;
+    var pc = i === 0 ? 't1' : i === 1 ? 't2' : i === 2 ? 't3' : '';
+    return /*#__PURE__*/React.createElement("div", {
+      key: r.id,
+      className: "lbrow ".concat(isMe ? 'me' : '')
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "lbpos ".concat(pc)
+    }, i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1), /*#__PURE__*/React.createElement("div", {
+      className: "lbname ".concat(isMe ? 'me' : '')
+    }, r.display_name || ((_r$email = r.email) === null || _r$email === void 0 ? void 0 : _r$email.split('@')[0]), isMe && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 11,
+        color: 'var(--gr)',
+        marginLeft: 6
+      }
+    }, "(vos)")), /*#__PURE__*/React.createElement("div", {
+      className: "lbdet"
+    }, /*#__PURE__*/React.createElement("div", null, r.preds, " pred."), /*#__PURE__*/React.createElement("div", null, r.exact, "\u2B50")), /*#__PURE__*/React.createElement("div", {
+      className: "lbpts"
+    }, r.pts, /*#__PURE__*/React.createElement("div", {
+      className: "lbptsl"
+    }, "pts")));
+  })));
 }
 
 // ── ADMIN ────────────────────────────────────────────────────
-function Admin({supa,ses,cfg,upCfg}) {
-  const [matches,setMatches]=useState([]);
-  const [status,setStatus]=useState('');
-  const [load,setLoad]=useState(false);
-  const [editing,setEditing]=useState(null);
-  const [adminEmail,setAdminEmail]=useState(cfg.adminEmail||ses.user?.email||'');
-  useEffect(()=>{supa.get('matches','select=*&order=kickoff_utc.asc').then(m=>setMatches(Array.isArray(m)?m:[]));},[]); 
-  const sync=async()=>{
-    setLoad(true);setStatus('Conectando a openfootball (GitHub)...');
-    const data=await fetchOFB();
-    if(!data){setStatus('❌ No se pudo conectar. Intentá de nuevo.');setLoad(false);return;}
-    const rows=parseOFB(data);setStatus(`Guardando ${rows.length} partidos...`);
-    let ok=0;
-    for(let i=0;i<rows.length;i+=25){
-      const b=rows.slice(i,i+25);
-      await supa.post('matches',b,'return=minimal,resolution=merge-duplicates');
-      ok+=b.length;setStatus(`Guardando... ${ok}/${rows.length}`);
+function Admin(_ref17) {
+  var _ses$user6;
+  var supa = _ref17.supa,
+    ses = _ref17.ses,
+    cfg = _ref17.cfg,
+    upCfg = _ref17.upCfg;
+  var _useState55 = useState([]),
+    _useState56 = _slicedToArray(_useState55, 2),
+    matches = _useState56[0],
+    setMatches = _useState56[1];
+  var _useState57 = useState(''),
+    _useState58 = _slicedToArray(_useState57, 2),
+    status = _useState58[0],
+    setStatus = _useState58[1];
+  var _useState59 = useState(false),
+    _useState60 = _slicedToArray(_useState59, 2),
+    load = _useState60[0],
+    setLoad = _useState60[1];
+  var _useState61 = useState(null),
+    _useState62 = _slicedToArray(_useState61, 2),
+    editing = _useState62[0],
+    setEditing = _useState62[1];
+  var _useState63 = useState(cfg.adminEmail || ((_ses$user6 = ses.user) === null || _ses$user6 === void 0 ? void 0 : _ses$user6.email) || ''),
+    _useState64 = _slicedToArray(_useState63, 2),
+    adminEmail = _useState64[0],
+    setAdminEmail = _useState64[1];
+  useEffect(function () {
+    supa.get('matches', 'select=*&order=kickoff_utc.asc').then(function (m) {
+      return setMatches(Array.isArray(m) ? m : []);
+    });
+  }, []);
+  var sync = /*#__PURE__*/function () {
+    var _ref18 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee9() {
+      var data, rows, ok, i, b, up;
+      return _regenerator().w(function (_context9) {
+        while (1) switch (_context9.n) {
+          case 0:
+            setLoad(true);
+            setStatus('Conectando a openfootball (GitHub)...');
+            _context9.n = 1;
+            return fetchOFB();
+          case 1:
+            data = _context9.v;
+            if (data) {
+              _context9.n = 2;
+              break;
+            }
+            setStatus('❌ No se pudo conectar. Intentá de nuevo.');
+            setLoad(false);
+            return _context9.a(2);
+          case 2:
+            rows = parseOFB(data);
+            setStatus("Guardando ".concat(rows.length, " partidos..."));
+            ok = 0;
+            i = 0;
+          case 3:
+            if (!(i < rows.length)) {
+              _context9.n = 6;
+              break;
+            }
+            b = rows.slice(i, i + 25);
+            _context9.n = 4;
+            return supa.post('matches', b, 'return=minimal,resolution=merge-duplicates');
+          case 4:
+            ok += b.length;
+            setStatus("Guardando... ".concat(ok, "/").concat(rows.length));
+          case 5:
+            i += 25;
+            _context9.n = 3;
+            break;
+          case 6:
+            _context9.n = 7;
+            return supa.get('matches', 'select=*&order=kickoff_utc.asc');
+          case 7:
+            up = _context9.v;
+            setMatches(Array.isArray(up) ? up : []);
+            setStatus("\u2705 ".concat(ok, " partidos sincronizados"));
+            setLoad(false);
+          case 8:
+            return _context9.a(2);
+        }
+      }, _callee9);
+    }));
+    return function sync() {
+      return _ref18.apply(this, arguments);
+    };
+  }();
+  var saveRes = /*#__PURE__*/function () {
+    var _ref19 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee0(id, hg, ag) {
+      return _regenerator().w(function (_context0) {
+        while (1) switch (_context0.n) {
+          case 0:
+            _context0.n = 1;
+            return supa.patch('matches', {
+              id: id
+            }, {
+              home_goals: parseInt(hg),
+              away_goals: parseInt(ag)
+            });
+          case 1:
+            setMatches(function (prev) {
+              return prev.map(function (m) {
+                return m.id === id ? _objectSpread(_objectSpread({}, m), {}, {
+                  home_goals: parseInt(hg),
+                  away_goals: parseInt(ag)
+                }) : m;
+              });
+            });
+            setEditing(null);
+          case 2:
+            return _context0.a(2);
+        }
+      }, _callee0);
+    }));
+    return function saveRes(_x2, _x3, _x4) {
+      return _ref19.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "stitle"
+  }, "PANEL ADMIN"), /*#__PURE__*/React.createElement("div", {
+    className: "ssub"
+  }, "Solo visible para el administrador"), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cfg-title"
+  }, "\uD83D\uDC64 Email de administrador"), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-desc"
+  }, "Tu email para acceder al panel Admin desde cualquier dispositivo."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10
     }
-    const up=await supa.get('matches','select=*&order=kickoff_utc.asc');
-    setMatches(Array.isArray(up)?up:[]);
-    setStatus(`✅ ${ok} partidos sincronizados`);setLoad(false);
-  };
-  const saveRes=async(id,hg,ag)=>{
-    await supa.patch('matches',{id},{home_goals:parseInt(hg),away_goals:parseInt(ag)});
-    setMatches(prev=>prev.map(m=>m.id===id?{...m,home_goals:parseInt(hg),away_goals:parseInt(ag)}:m));
-    setEditing(null);
-  };
-  return (
-    <div>
-      <div className="stitle">PANEL ADMIN</div>
-      <div className="ssub">Solo visible para el administrador</div>
-      <div className="cfg-card">
-        <div className="cfg-title">👤 Email de administrador</div>
-        <div className="cfg-desc">Tu email para acceder al panel Admin desde cualquier dispositivo.</div>
-        <div style={{display:'flex',gap:10}}>
-          <input className="cfg-input" value={adminEmail} onChange={e=>setAdminEmail(e.target.value)} placeholder="tu@email.com"/>
-          <button className="btn-sm" onClick={()=>upCfg({...cfg,adminEmail:adminEmail.trim()})}>Guardar</button>
-        </div>
-        {cfg.adminEmail&&<p style={{fontSize:11,color:'var(--gr)',marginTop:8}}>Guardado: <strong style={{color:'var(--gb)'}}>{cfg.adminEmail}</strong></p>}
-      </div>
-      <div className="cfg-card">
-        <div className="cfg-title">🔄 Sincronizar desde openfootball</div>
-        <div className="cfg-desc">Trae los 104 partidos del Mundial 2026 desde GitHub, sin API key. También actualiza resultados.</div>
-        {status&&<div className={status.startsWith('✅')?'ok':'err'} style={{marginBottom:12}}>{status}</div>}
-        <button className="btn-sm" onClick={sync} disabled={load}>{load?'Sincronizando...':'⬇ Sincronizar partidos y resultados'}</button>
-      </div>
-      <div className="cfg-card">
-        <div className="cfg-title">✏️ Resultados manuales</div>
-        <div className="cfg-desc">{matches.length} partidos en la base de datos.</div>
-        {matches.map(m=>{
-          const hm=getTeam(m.home_team),aw=getTeam(m.away_team);const isEd=editing===m.id;
-          return (
-            <div key={m.id} style={{display:'flex',alignItems:'center',gap:8,marginBottom:10,flexWrap:'wrap',paddingBottom:10,borderBottom:'1px solid rgba(76,175,80,.07)'}}>
-              <span style={{flex:1,fontSize:13,minWidth:180}}>{hm.f} {hm.n} vs {aw.f} {aw.n}<span style={{fontSize:11,color:'var(--gr)',display:'block',marginTop:2}}>{fmtD(m.kickoff_utc)}</span></span>
-              {isEd
-                ? <ResEdit m={m} onSave={saveRes} onCancel={()=>setEditing(null)}/>
-                : <div style={{display:'flex',alignItems:'center',gap:8}}>
-                    {m.home_goals!==null?<span style={{fontFamily:"'Bebas Neue'",color:'var(--gold)',fontSize:18}}>{m.home_goals} - {m.away_goals}</span>:<span style={{fontSize:12,color:'var(--gr)'}}>Sin resultado</span>}
-                    <button className="btn-sm" style={{padding:'4px 10px',fontSize:11}} onClick={()=>setEditing(m.id)}>{m.home_goals!==null?'Editar':'+ Resultado'}</button>
-                  </div>
-              }
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  }, /*#__PURE__*/React.createElement("input", {
+    className: "cfg-input",
+    value: adminEmail,
+    onChange: function onChange(e) {
+      return setAdminEmail(e.target.value);
+    },
+    placeholder: "tu@email.com"
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "btn-sm",
+    onClick: function onClick() {
+      return upCfg(_objectSpread(_objectSpread({}, cfg), {}, {
+        adminEmail: adminEmail.trim()
+      }));
+    }
+  }, "Guardar")), cfg.adminEmail && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 11,
+      color: 'var(--gr)',
+      marginTop: 8
+    }
+  }, "Guardado: ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: 'var(--gb)'
+    }
+  }, cfg.adminEmail))), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cfg-title"
+  }, "\uD83D\uDD04 Sincronizar desde openfootball"), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-desc"
+  }, "Trae los 104 partidos del Mundial 2026 desde GitHub, sin API key. Tambi\xE9n actualiza resultados."), status && /*#__PURE__*/React.createElement("div", {
+    className: status.startsWith('✅') ? 'ok' : 'err',
+    style: {
+      marginBottom: 12
+    }
+  }, status), /*#__PURE__*/React.createElement("button", {
+    className: "btn-sm",
+    onClick: sync,
+    disabled: load
+  }, load ? 'Sincronizando...' : '⬇ Sincronizar partidos y resultados')), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cfg-title"
+  }, "\u270F\uFE0F Resultados manuales"), /*#__PURE__*/React.createElement("div", {
+    className: "cfg-desc"
+  }, matches.length, " partidos en la base de datos."), matches.map(function (m) {
+    var hm = getTeam(m.home_team),
+      aw = getTeam(m.away_team);
+    var isEd = editing === m.id;
+    return /*#__PURE__*/React.createElement("div", {
+      key: m.id,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: 10,
+        flexWrap: 'wrap',
+        paddingBottom: 10,
+        borderBottom: '1px solid rgba(76,175,80,.07)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 13,
+        minWidth: 180
+      }
+    }, hm.f, " ", hm.n, " vs ", aw.f, " ", aw.n, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 11,
+        color: 'var(--gr)',
+        display: 'block',
+        marginTop: 2
+      }
+    }, fmtD(m.kickoff_utc))), isEd ? /*#__PURE__*/React.createElement(ResEdit, {
+      m: m,
+      onSave: saveRes,
+      onCancel: function onCancel() {
+        return setEditing(null);
+      }
+    }) : /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8
+      }
+    }, m.home_goals !== null ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'Bebas Neue'",
+        color: 'var(--gold)',
+        fontSize: 18
+      }
+    }, m.home_goals, " - ", m.away_goals) : /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        color: 'var(--gr)'
+      }
+    }, "Sin resultado"), /*#__PURE__*/React.createElement("button", {
+      className: "btn-sm",
+      style: {
+        padding: '4px 10px',
+        fontSize: 11
+      },
+      onClick: function onClick() {
+        return setEditing(m.id);
+      }
+    }, m.home_goals !== null ? 'Editar' : '+ Resultado')));
+  })));
 }
-
-function ResEdit({m,onSave,onCancel}) {
-  const [hg,setHg]=useState(m.home_goals??'');const [ag,setAg]=useState(m.away_goals??'');
-  return (
-    <div style={{display:'flex',gap:6,alignItems:'center'}}>
-      <input className="si" style={{width:44,height:36,fontSize:18}} type="number" min="0" value={hg} onChange={e=>setHg(e.target.value)}/>
-      <span style={{color:'var(--gr)'}}>-</span>
-      <input className="si" style={{width:44,height:36,fontSize:18}} type="number" min="0" value={ag} onChange={e=>setAg(e.target.value)}/>
-      <button className="btn-sm" style={{padding:'4px 10px',fontSize:11}} onClick={()=>onSave(m.id,hg,ag)}>✓</button>
-      <button className="btn-c" style={{padding:'4px 8px',fontSize:11}} onClick={onCancel}>✗</button>
-    </div>
-  );
+function ResEdit(_ref20) {
+  var _m$home_goals, _m$away_goals;
+  var m = _ref20.m,
+    onSave = _ref20.onSave,
+    onCancel = _ref20.onCancel;
+  var _useState65 = useState((_m$home_goals = m.home_goals) !== null && _m$home_goals !== void 0 ? _m$home_goals : ''),
+    _useState66 = _slicedToArray(_useState65, 2),
+    hg = _useState66[0],
+    setHg = _useState66[1];
+  var _useState67 = useState((_m$away_goals = m.away_goals) !== null && _m$away_goals !== void 0 ? _m$away_goals : ''),
+    _useState68 = _slicedToArray(_useState67, 2),
+    ag = _useState68[0],
+    setAg = _useState68[1];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    className: "si",
+    style: {
+      width: 44,
+      height: 36,
+      fontSize: 18
+    },
+    type: "number",
+    min: "0",
+    value: hg,
+    onChange: function onChange(e) {
+      return setHg(e.target.value);
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--gr)'
+    }
+  }, "-"), /*#__PURE__*/React.createElement("input", {
+    className: "si",
+    style: {
+      width: 44,
+      height: 36,
+      fontSize: 18
+    },
+    type: "number",
+    min: "0",
+    value: ag,
+    onChange: function onChange(e) {
+      return setAg(e.target.value);
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "btn-sm",
+    style: {
+      padding: '4px 10px',
+      fontSize: 11
+    },
+    onClick: function onClick() {
+      return onSave(m.id, hg, ag);
+    }
+  }, "\u2713"), /*#__PURE__*/React.createElement("button", {
+    className: "btn-c",
+    style: {
+      padding: '4px 8px',
+      fontSize: 11
+    },
+    onClick: onCancel
+  }, "\u2717"));
 }
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 </body>
 </html>
