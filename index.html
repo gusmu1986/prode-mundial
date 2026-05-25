@@ -573,27 +573,27 @@ var OFB_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/mast
 var PROXIES = [function (u) {
   return "https://api.allorigins.win/raw?url=".concat(encodeURIComponent(u));
 }, function (u) {
-  return "https://corsproxy.io/?".concat(encodeURIComponent(u));
-}, function (u) {
   return "https://api.codetabs.com/v1/proxy?quest=".concat(encodeURIComponent(u));
+}, function (u) {
+  return "https://thingproxy.freeboard.io/fetch/".concat(u);
 }];
 var fetchOFB = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
-    var _i, _PROXIES, px, r, _t;
+    var _i, _PROXIES, px, r, text, _t;
     return _regenerator().w(function (_context2) {
       while (1) switch (_context2.p = _context2.n) {
         case 0:
           _i = 0, _PROXIES = PROXIES;
         case 1:
           if (!(_i < _PROXIES.length)) {
-            _context2.n = 8;
+            _context2.n = 9;
             break;
           }
           px = _PROXIES[_i];
           _context2.p = 2;
           _context2.n = 3;
           return fetch(px(OFB_URL), {
-            signal: AbortSignal.timeout(8000)
+            signal: AbortSignal.timeout(10000)
           });
         case 3:
           r = _context2.v;
@@ -601,24 +601,31 @@ var fetchOFB = /*#__PURE__*/function () {
             _context2.n = 4;
             break;
           }
-          return _context2.a(3, 7);
+          return _context2.a(3, 8);
         case 4:
           _context2.n = 5;
           return r.text();
         case 5:
-          var _txt=_context2.v; if(!_txt||_txt.length<10){return _context2.a(3,7);} try{return _context2.a(2,JSON.parse(_txt));}catch{return _context2.a(3,7);}
+          text = _context2.v;
+          if (!(!text || text.trim().length < 100)) {
+            _context2.n = 6;
+            break;
+          }
+          return _context2.a(3, 8);
         case 6:
-          _context2.p = 6;
-          _t = _context2.v;
-          return _context2.a(3, 7);
+          return _context2.a(2, JSON.parse(text));
         case 7:
+          _context2.p = 7;
+          _t = _context2.v;
+          return _context2.a(3, 8);
+        case 8:
           _i++;
           _context2.n = 1;
           break;
-        case 8:
+        case 9:
           return _context2.a(2, null);
       }
-    }, _callee2, null, [[2, 6]]);
+    }, _callee2, null, [[2, 7]]);
   }));
   return function fetchOFB() {
     return _ref4.apply(this, arguments);
