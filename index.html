@@ -569,65 +569,47 @@ var getTeam = function getTeam(id) {
 };
 
 // ── OFB FETCH ────────────────────────────────────────────────
-var OFB_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
-var PROXIES = [function (u) {
-  return "https://api.allorigins.win/raw?url=".concat(encodeURIComponent(u));
-}, function (u) {
-  return "https://api.codetabs.com/v1/proxy?quest=".concat(encodeURIComponent(u));
-}, function (u) {
-  return "https://thingproxy.freeboard.io/fetch/".concat(u);
-}];
 var fetchOFB = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
-    var _i, _PROXIES, px, r, text, _t;
+  var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(onProgress) {
+    var _data$content, resp, data, text, clean, _t;
     return _regenerator().w(function (_context2) {
       while (1) switch (_context2.p = _context2.n) {
         case 0:
-          _i = 0, _PROXIES = PROXIES;
-        case 1:
-          if (!(_i < _PROXIES.length)) {
-            _context2.n = 9;
-            break;
-          }
-          px = _PROXIES[_i];
-          _context2.p = 2;
-          _context2.n = 3;
-          return fetch(px(OFB_URL), {
-            signal: AbortSignal.timeout(10000)
-          });
-        case 3:
-          r = _context2.v;
-          if (r.ok) {
-            _context2.n = 4;
-            break;
-          }
-          return _context2.a(3, 8);
-        case 4:
-          _context2.n = 5;
-          return r.text();
-        case 5:
-          text = _context2.v;
-          if (!(!text || text.trim().length < 100)) {
-            _context2.n = 6;
-            break;
-          }
-          return _context2.a(3, 8);
-        case 6:
-          return _context2.a(2, JSON.parse(text));
-        case 7:
-          _context2.p = 7;
-          _t = _context2.v;
-          return _context2.a(3, 8);
-        case 8:
-          _i++;
+          _context2.p = 0;
+          if (onProgress) onProgress('Consultando a Claude el fixture del Mundial 2026...');
           _context2.n = 1;
-          break;
-        case 9:
+          return fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              model: 'claude-sonnet-4-20250514',
+              max_tokens: 8000,
+              messages: [{
+                role: 'user',
+                content: "Devolveme el fixture completo del Mundial 2026 (todos los partidos de fase de grupos) en formato JSON.\nUs\xE1 exactamente este formato, sin texto adicional, solo el JSON:\n{\n  \"matches\": [\n    {\"team1\": \"Mexico\", \"team2\": \"South Africa\", \"date\": \"2026-06-11\", \"time\": \"19:00 UTC+0\", \"group\": \"A\"},\n    ...\n  ]\n}\nInclu\xED los 48 partidos de la fase de grupos con fechas y horarios reales en UTC.\nSolo respond\xE9 con el JSON, sin markdown, sin explicaciones."
+              }]
+            })
+          });
+        case 1:
+          resp = _context2.v;
+          _context2.n = 2;
+          return resp.json();
+        case 2:
+          data = _context2.v;
+          text = ((_data$content = data.content) === null || _data$content === void 0 || (_data$content = _data$content[0]) === null || _data$content === void 0 ? void 0 : _data$content.text) || '';
+          clean = text.replace(/\`\`\`json|\`\`\`/g, '').trim();
+          return _context2.a(2, JSON.parse(clean));
+        case 3:
+          _context2.p = 3;
+          _t = _context2.v;
+          console.error('Claude fetch error:', _t);
           return _context2.a(2, null);
       }
-    }, _callee2, null, [[2, 7]]);
+    }, _callee2, null, [[0, 3]]);
   }));
-  return function fetchOFB() {
+  return function fetchOFB(_x2) {
     return _ref4.apply(this, arguments);
   };
 }();
@@ -1744,9 +1726,11 @@ function Admin(_ref17) {
         while (1) switch (_context9.n) {
           case 0:
             setLoad(true);
-            setStatus('Conectando a openfootball (GitHub)...');
+            setStatus('Iniciando sincronización...');
             _context9.n = 1;
-            return fetchOFB();
+            return fetchOFB(function (msg) {
+              return setStatus(msg);
+            });
           case 1:
             data = _context9.v;
             if (data) {
@@ -1820,7 +1804,7 @@ function Admin(_ref17) {
         }
       }, _callee0);
     }));
-    return function saveRes(_x2, _x3, _x4) {
+    return function saveRes(_x3, _x4, _x5) {
       return _ref19.apply(this, arguments);
     };
   }();
